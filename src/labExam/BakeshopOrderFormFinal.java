@@ -284,7 +284,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 
 		JLabel lblChocolateCakeSliceImg = new JLabel("");
 		lblChocolateCakeSliceImg
-				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/chocolate cake slice.png")));
 		chocolateCakeSectionNorth.add(lblChocolateCakeSliceImg);
 
 		JPanel chocolateCakeCenter = new JPanel();
@@ -311,13 +311,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		miniCakePanel.add(miniCakeNorth, BorderLayout.NORTH);
 
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblNewLabel_2.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/mini cake.png")));
 		miniCakeNorth.add(lblNewLabel_2);
 
 		JPanel miniCakeCenter = new JPanel();
 		miniCakePanel.add(miniCakeCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxNewCheckBox_1_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
+		JCheckBox chckbxNewCheckBox_1_1 = new JCheckBox("Mini Cake - ₱450");
 		miniCakeCenter.add(chckbxNewCheckBox_1_1);
 
 		JPanel miniCakeSouth = new JPanel();
@@ -338,13 +338,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		browniesPanel.add(browniesNorth, BorderLayout.NORTH);
 
 		JLabel lblNewLabel_2_1 = new JLabel("");
-		lblNewLabel_2_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblNewLabel_2_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/brownies.png")));
 		browniesNorth.add(lblNewLabel_2_1);
 
 		JPanel browniesCenter = new JPanel();
 		browniesPanel.add(browniesCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxNewCheckBox_1_1_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
+		JCheckBox chckbxNewCheckBox_1_1_1 = new JCheckBox("Brownies (Per Piece) - ₱60");
 		browniesCenter.add(chckbxNewCheckBox_1_1_1);
 
 		JPanel browniesSouth = new JPanel();
