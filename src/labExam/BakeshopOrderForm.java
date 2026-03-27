@@ -23,6 +23,9 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.CardLayout;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
 
 public class BakeshopOrderForm extends JFrame {
 
@@ -51,13 +54,16 @@ public class BakeshopOrderForm extends JFrame {
 	public BakeshopOrderForm() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 887, 600);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
+		//---------- HEADER ------------
 		JPanel headerPanelNorth = new JPanel();
 		headerPanelNorth.setBackground(new Color(255, 218, 185));
+		headerPanelNorth.setPreferredSize(new Dimension(100, 120));
 		contentPane.add(headerPanelNorth, BorderLayout.NORTH);
 		headerPanelNorth.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 5));
 		
@@ -72,6 +78,28 @@ public class BakeshopOrderForm extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(BakeshopOrderForm.class.getResource("/labExam/croissant.png")));
 		headerPanelNorth.add(lblNewLabel_1);
+		
+		//---------- CUSTOMER INFO PANEL ------------
+		JPanel InfoPanel = new JPanel();
+		InfoPanel.setBackground(new Color(255, 228, 181));
+		contentPane.add(InfoPanel, BorderLayout.CENTER);
+		InfoPanel.setLayout(new BorderLayout(0, 0));
+		
+		JPanel customerInfoPanel = new JPanel();
+		customerInfoPanel.setPreferredSize(new Dimension(100, 200));
+		InfoPanel.add(customerInfoPanel, BorderLayout.NORTH);
+		customerInfoPanel.setLayout(null);
+		
+		JLabel lblNewLabel_2 = new JLabel("CUSTOMER INFORMATION");
+		lblNewLabel_2.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
+		lblNewLabel_2.setBounds(10, 0, 267, 39);
+		customerInfoPanel.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Name:");
+		lblNewLabel_3.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		lblNewLabel_3.setBounds(10, 35, 46, 14);
+		customerInfoPanel.add(lblNewLabel_3);
+		
 		
 	}
 }
