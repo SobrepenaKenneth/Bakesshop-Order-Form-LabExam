@@ -28,6 +28,8 @@ import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import javax.swing.JCheckBox;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 public class BakeshopOrderForm extends JFrame {
 
@@ -57,7 +59,7 @@ public class BakeshopOrderForm extends JFrame {
 	 */
 	public BakeshopOrderForm() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 887, 600);
+		setBounds(100, 100, 903, 522);
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -81,52 +83,52 @@ public class BakeshopOrderForm extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("CUSTOMER INFORMATION");
 		lblNewLabel_2.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(10, 107, 267, 39);
+		lblNewLabel_2.setBounds(10, 128, 267, 39);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Name:");
 		lblNewLabel_3.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		lblNewLabel_3.setBounds(10, 145, 59, 21);
+		lblNewLabel_3.setBounds(10, 166, 59, 21);
 		contentPane.add(lblNewLabel_3);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(75, 148, 196, 20);
+		textField.setBounds(75, 169, 196, 20);
 		contentPane.add(textField);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Phone:");
 		lblNewLabel_3_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		lblNewLabel_3_1.setBounds(10, 177, 59, 21);
+		lblNewLabel_3_1.setBounds(10, 198, 59, 21);
 		contentPane.add(lblNewLabel_3_1);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(75, 177, 196, 20);
+		textField_1.setBounds(75, 198, 196, 20);
 		contentPane.add(textField_1);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("ORDER TYPE");
 		lblNewLabel_2_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
-		lblNewLabel_2_1.setBounds(689, 99, 130, 39);
+		lblNewLabel_2_1.setBounds(717, 128, 130, 39);
 		contentPane.add(lblNewLabel_2_1);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Pickup");
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnNewRadioButton.setBounds(689, 143, 71, 23);
+		rdbtnNewRadioButton.setBounds(717, 172, 71, 23);
 		contentPane.add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Delivery");
 		rdbtnNewRadioButton_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnNewRadioButton_1.setBounds(689, 172, 85, 23);
+		rdbtnNewRadioButton_1.setBounds(717, 201, 85, 23);
 		contentPane.add(rdbtnNewRadioButton_1);
 		
 		JLabel lblNewLabel_4 = new JLabel("New label");
 		lblNewLabel_4.setIcon(new ImageIcon(BakeshopOrderForm.class.getResource("/labExam/delivery (1).png")));
-		lblNewLabel_4.setBounds(783, 145, 50, 50);
+		lblNewLabel_4.setBounds(811, 174, 50, 50);
 		contentPane.add(lblNewLabel_4);
 		
 		JTabbedPane JTabbedPastriesPage = new JTabbedPane(JTabbedPane.TOP);
 		JTabbedPastriesPage.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		JTabbedPastriesPage.setBounds(10, 230, 383, 208);
+		JTabbedPastriesPage.setBounds(10, 230, 309, 208);
 		contentPane.add(JTabbedPastriesPage);
 		
 		JPanel bakedGoodsPanel = new JPanel();
@@ -135,7 +137,7 @@ public class BakeshopOrderForm extends JFrame {
 		
 		JLabel lblNewLabel_5 = new JLabel("Baked Goods");
 		lblNewLabel_5.setFont(new Font("Segoe UI Semibold", Font.BOLD, 15));
-		lblNewLabel_5.setBounds(144, 11, 89, 22);
+		lblNewLabel_5.setBounds(104, 11, 89, 22);
 		bakedGoodsPanel.add(lblNewLabel_5);
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Chocolate Cake Slice");
@@ -154,18 +156,109 @@ public class BakeshopOrderForm extends JFrame {
 		JTabbedPastriesPage.addTab("Bread and Pastries", null, breadAndPastriesPanel, null);
 		breadAndPastriesPanel.setLayout(null);
 		
+		JLabel lblNewLabel_5_1 = new JLabel("Bread and Pastries");
+		lblNewLabel_5_1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 15));
+		lblNewLabel_5_1.setBounds(84, 11, 132, 22);
+		breadAndPastriesPanel.add(lblNewLabel_5_1);
+		
+		JCheckBox chckbxEnsaymada = new JCheckBox("Ensaymada");
+		chckbxEnsaymada.setBounds(6, 47, 133, 23);
+		breadAndPastriesPanel.add(chckbxEnsaymada);
+		
+		JCheckBox chckbxCroissant = new JCheckBox("Croissant");
+		chckbxCroissant.setBounds(6, 71, 133, 23);
+		breadAndPastriesPanel.add(chckbxCroissant);
+		
+		JCheckBox chckbxPandesal = new JCheckBox("Pandesal");
+		chckbxPandesal.setBounds(6, 99, 133, 23);
+		breadAndPastriesPanel.add(chckbxPandesal);
+		
 		JPanel cookiesAndTreatsPanel = new JPanel();
 		JTabbedPastriesPage.addTab("Cookies and Treats", null, cookiesAndTreatsPanel, null);
 		cookiesAndTreatsPanel.setLayout(null);
 		
+		JLabel lblNewLabel_5_2 = new JLabel("Cookies and Treats");
+		lblNewLabel_5_2.setFont(new Font("Segoe UI Semibold", Font.BOLD, 15));
+		lblNewLabel_5_2.setBounds(75, 11, 128, 22);
+		cookiesAndTreatsPanel.add(lblNewLabel_5_2);
+		
+		JCheckBox chckbxChocolateChipCookie = new JCheckBox("Chocolate Chip Cookie");
+		chckbxChocolateChipCookie.setBounds(17, 40, 133, 23);
+		cookiesAndTreatsPanel.add(chckbxChocolateChipCookie);
+		
+		JCheckBox chckbxOatmealCookie = new JCheckBox("Oatmeal Cookie");
+		chckbxOatmealCookie.setBounds(18, 66, 133, 23);
+		cookiesAndTreatsPanel.add(chckbxOatmealCookie);
+		
+		JCheckBox chckbxCrinkles = new JCheckBox("Crinkles");
+		chckbxCrinkles.setBounds(20, 96, 133, 23);
+		cookiesAndTreatsPanel.add(chckbxCrinkles);
+		
 		JTabbedPane JTabbedAccessoriesPage = new JTabbedPane(JTabbedPane.TOP);
 		JTabbedAccessoriesPage.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		JTabbedAccessoriesPage.setBounds(425, 230, 326, 214);
+		JTabbedAccessoriesPage.setBounds(329, 230, 150, 214);
 		contentPane.add(JTabbedAccessoriesPage);
 		
 		JPanel accessoriesPanel = new JPanel();
 		JTabbedAccessoriesPage.addTab("Accessories", null, accessoriesPanel, null);
 		accessoriesPanel.setLayout(null);
+		
+		JLabel lblNewLabel_5_3 = new JLabel("Accessories");
+		lblNewLabel_5_3.setFont(new Font("Segoe UI Semibold", Font.BOLD, 15));
+		lblNewLabel_5_3.setBounds(31, 11, 77, 22);
+		accessoriesPanel.add(lblNewLabel_5_3);
+		
+		JCheckBox chckbxBirthdayCandleSet = new JCheckBox("Birthday Candle Set");
+		chckbxBirthdayCandleSet.setBounds(6, 39, 133, 23);
+		accessoriesPanel.add(chckbxBirthdayCandleSet);
+		
+		JCheckBox chckbxCakeTopper = new JCheckBox("Cake Topper");
+		chckbxCakeTopper.setBounds(6, 63, 133, 23);
+		accessoriesPanel.add(chckbxCakeTopper);
+		
+		JCheckBox chckbxCrinkles_1 = new JCheckBox("Crinkles");
+		chckbxCrinkles_1.setBounds(6, 92, 133, 23);
+		accessoriesPanel.add(chckbxCrinkles_1);
+		
+		JLabel lblNewLabel_2_2 = new JLabel("---- Order Page ----");
+		lblNewLabel_2_2.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
+		lblNewLabel_2_2.setBounds(342, 83, 187, 39);
+		contentPane.add(lblNewLabel_2_2);
+		
+		JRadioButton rdbtnNewRadioButton_1_1 = new JRadioButton("Per Piece");
+		rdbtnNewRadioButton_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		rdbtnNewRadioButton_1_1.setBounds(489, 303, 107, 23);
+		contentPane.add(rdbtnNewRadioButton_1_1);
+		
+		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Per Dozen");
+		rdbtnNewRadioButton_2.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		rdbtnNewRadioButton_2.setBounds(489, 274, 107, 23);
+		contentPane.add(rdbtnNewRadioButton_2);
+		
+		JLabel lblNewLabel_2_1_1 = new JLabel("ORDER UNIT");
+		lblNewLabel_2_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
+		lblNewLabel_2_1_1.setBounds(489, 230, 130, 39);
+		contentPane.add(lblNewLabel_2_1_1);
+		
+		JLabel lblNewLabel_2_1_1_1 = new JLabel("Payment Method");
+		lblNewLabel_2_1_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
+		lblNewLabel_2_1_1_1.setBounds(489, 329, 177, 39);
+		contentPane.add(lblNewLabel_2_1_1_1);
+		
+		JRadioButton rdbtnNewRadioButton_2_1 = new JRadioButton("Cash");
+		rdbtnNewRadioButton_2_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		rdbtnNewRadioButton_2_1.setBounds(489, 372, 107, 23);
+		contentPane.add(rdbtnNewRadioButton_2_1);
+		
+		JRadioButton rdbtnNewRadioButton_1_1_1 = new JRadioButton("GCash");
+		rdbtnNewRadioButton_1_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		rdbtnNewRadioButton_1_1_1.setBounds(489, 401, 107, 23);
+		contentPane.add(rdbtnNewRadioButton_1_1_1);
+		
+		JRadioButton rdbtnNewRadioButton_1_1_1_1 = new JRadioButton("Credit Card");
+		rdbtnNewRadioButton_1_1_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		rdbtnNewRadioButton_1_1_1_1.setBounds(489, 427, 107, 23);
+		contentPane.add(rdbtnNewRadioButton_1_1_1_1);
 		
 		
 	}
