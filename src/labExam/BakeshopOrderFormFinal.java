@@ -34,6 +34,7 @@ import javax.swing.JSeparator;
 import java.awt.GridLayout;
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 import java.awt.Component;
+import javax.swing.ScrollPaneConstants;
 
 public class BakeshopOrderFormFinal extends JFrame {
 
@@ -206,9 +207,12 @@ public class BakeshopOrderFormFinal extends JFrame {
 		centerPanel.add(productSelectionPanel, BorderLayout.CENTER);
 		productSelectionPanel.setLayout(new GridLayout(0, 1, 0, 0));
 		
+		JScrollPane scrollPane = new JScrollPane();
+		productSelectionPanel.add(scrollPane);
+		
 		JTabbedPane JTabbedPastriesPage = new JTabbedPane(JTabbedPane.TOP);
+		scrollPane.setViewportView(JTabbedPastriesPage);
 		JTabbedPastriesPage.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		productSelectionPanel.add(JTabbedPastriesPage);
 		
 		JPanel bakedGoodsPanel = new JPanel();
 		JTabbedPastriesPage.addTab("Baked Goods", null, bakedGoodsPanel, null);
