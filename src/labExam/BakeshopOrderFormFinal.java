@@ -31,11 +31,16 @@ import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.UIManager;
 import javax.swing.JSeparator;
+import java.awt.GridLayout;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
 
 public class BakeshopOrderFormFinal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTextField txtName;
+	private JTextField txtPhone;
 	private JTextField textField;
 	private JTextField textField_1;
 
@@ -66,23 +71,23 @@ public class BakeshopOrderFormFinal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
-		JPanel headerNorthPanel = new JPanel();
-		headerNorthPanel.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
-		headerNorthPanel.setBackground(new Color(255, 228, 196));
-		contentPane.add(headerNorthPanel, BorderLayout.NORTH);
-		headerNorthPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		JPanel NorthPanel = new JPanel();
+		NorthPanel.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
+		NorthPanel.setBackground(new Color(255, 228, 196));
+		contentPane.add(NorthPanel, BorderLayout.NORTH);
+		NorthPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/Pastry1.png")));
-		headerNorthPanel.add(lblNewLabel);
+		JLabel lblPancakeImage = new JLabel("");
+		lblPancakeImage.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/Pastry1.png")));
+		NorthPanel.add(lblPancakeImage);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Losamia Pastry");
-		lblNewLabel_1_1.setFont(new Font("Segoe UI Black", Font.BOLD, 50));
-		headerNorthPanel.add(lblNewLabel_1_1);
+		JLabel lblLosamiaPastry = new JLabel("Losamia Pastry");
+		lblLosamiaPastry.setFont(new Font("Segoe UI Black", Font.BOLD, 50));
+		NorthPanel.add(lblLosamiaPastry);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		headerNorthPanel.add(lblNewLabel_1);
+		JLabel lblCroissantImage = new JLabel("");
+		lblCroissantImage.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		NorthPanel.add(lblCroissantImage);
 		
 		JPanel westPanel = new JPanel();
 		westPanel.setBackground(new Color(255, 228, 225));
@@ -97,30 +102,30 @@ public class BakeshopOrderFormFinal extends JFrame {
 		westPanel.add(customerInformationPanel);
 		customerInformationPanel.setLayout(null);
 		
-		JLabel lblNewLabel_2 = new JLabel("CUSTOMER INFORMATION");
-		lblNewLabel_2.setBounds(22, 0, 206, 21);
-		lblNewLabel_2.setFont(new Font("Segoe UI Black", Font.BOLD, 15));
-		customerInformationPanel.add(lblNewLabel_2);
+		JLabel lblCustomerInformation = new JLabel("CUSTOMER INFORMATION");
+		lblCustomerInformation.setBounds(22, 11, 206, 21);
+		lblCustomerInformation.setFont(new Font("Segoe UI Black", Font.BOLD, 15));
+		customerInformationPanel.add(lblCustomerInformation);
 		
-		JLabel lblNewLabel_3 = new JLabel("Name:");
-		lblNewLabel_3.setBounds(0, 34, 64, 16);
-		lblNewLabel_3.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		customerInformationPanel.add(lblNewLabel_3);
+		JLabel lblName = new JLabel("Name:");
+		lblName.setBounds(10, 39, 64, 16);
+		lblName.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		customerInformationPanel.add(lblName);
 		
-		textField = new JTextField();
-		textField.setBounds(74, 35, 166, 20);
-		textField.setColumns(20);
-		customerInformationPanel.add(textField);
+		txtName = new JTextField();
+		txtName.setBounds(74, 39, 166, 20);
+		txtName.setColumns(20);
+		customerInformationPanel.add(txtName);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("Phone:");
-		lblNewLabel_3_1.setBounds(0, 59, 64, 16);
-		lblNewLabel_3_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		customerInformationPanel.add(lblNewLabel_3_1);
+		JLabel lblPhone = new JLabel("Phone:");
+		lblPhone.setBounds(10, 71, 64, 16);
+		lblPhone.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		customerInformationPanel.add(lblPhone);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(74, 60, 166, 20);
-		textField_1.setColumns(20);
-		customerInformationPanel.add(textField_1);
+		txtPhone = new JTextField();
+		txtPhone.setBounds(74, 72, 166, 20);
+		txtPhone.setColumns(20);
+		customerInformationPanel.add(txtPhone);
 		
 		JPanel oderTypePanel = new JPanel();
 		oderTypePanel.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
@@ -129,194 +134,173 @@ public class BakeshopOrderFormFinal extends JFrame {
 		westPanel.add(oderTypePanel);
 		oderTypePanel.setLayout(null);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("ORDER TYPE");
-		lblNewLabel_2_1.setBounds(79, 9, 92, 21);
-		lblNewLabel_2_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
-		oderTypePanel.add(lblNewLabel_2_1);
+		JLabel lblOrderType = new JLabel("ORDER TYPE");
+		lblOrderType.setBounds(79, 9, 92, 21);
+		lblOrderType.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
+		oderTypePanel.add(lblOrderType);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Pickup");
-		rdbtnNewRadioButton.setBounds(6, 31, 71, 29);
-		rdbtnNewRadioButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		oderTypePanel.add(rdbtnNewRadioButton);
+		JRadioButton rdbtnPickup = new JRadioButton("Pickup");
+		rdbtnPickup.setBounds(6, 31, 71, 29);
+		rdbtnPickup.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		oderTypePanel.add(rdbtnPickup);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Delivery");
-		rdbtnNewRadioButton_1.setBounds(6, 63, 83, 29);
-		rdbtnNewRadioButton_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		oderTypePanel.add(rdbtnNewRadioButton_1);
+		JRadioButton rdbtnDelivery = new JRadioButton("Delivery");
+		rdbtnDelivery.setBounds(6, 63, 83, 29);
+		rdbtnDelivery.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		oderTypePanel.add(rdbtnDelivery);
 		
-		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setBounds(143, 39, 51, 50);
-		lblNewLabel_4.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/delivery (1).png")));
-		oderTypePanel.add(lblNewLabel_4);
+		JLabel lblDeliveryImage = new JLabel("");
+		lblDeliveryImage.setBounds(143, 39, 51, 50);
+		lblDeliveryImage.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/delivery (1).png")));
+		oderTypePanel.add(lblDeliveryImage);
 		
 		JPanel orderUnitPanel = new JPanel();
 		orderUnitPanel.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
 		orderUnitPanel.setBackground(new Color(255, 228, 225));
-		orderUnitPanel.setBounds(0, 234, 250, 112);
+		orderUnitPanel.setBounds(0, 239, 250, 112);
 		westPanel.add(orderUnitPanel);
 		orderUnitPanel.setLayout(null);
 		
-		JRadioButton rdbtnNewRadioButton_1_1 = new JRadioButton("Per Piece");
-		rdbtnNewRadioButton_1_1.setBounds(6, 73, 89, 29);
-		rdbtnNewRadioButton_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		orderUnitPanel.add(rdbtnNewRadioButton_1_1);
+		JRadioButton rdbtnPerPiece = new JRadioButton("Per Piece");
+		rdbtnPerPiece.setBounds(6, 73, 89, 29);
+		rdbtnPerPiece.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		orderUnitPanel.add(rdbtnPerPiece);
 		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Per Dozen");
-		rdbtnNewRadioButton_2.setBounds(6, 41, 97, 29);
-		rdbtnNewRadioButton_2.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		orderUnitPanel.add(rdbtnNewRadioButton_2);
+		JRadioButton rdbtnPerDozen = new JRadioButton("Per Dozen");
+		rdbtnPerDozen.setBounds(6, 41, 97, 29);
+		rdbtnPerDozen.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		orderUnitPanel.add(rdbtnPerDozen);
 		
-		JLabel lblNewLabel_2_1_1 = new JLabel("ORDER UNIT");
-		lblNewLabel_2_1_1.setBounds(76, 7, 97, 27);
-		lblNewLabel_2_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
-		orderUnitPanel.add(lblNewLabel_2_1_1);
+		JLabel lblOrderUnit = new JLabel("ORDER UNIT");
+		lblOrderUnit.setBounds(76, 7, 97, 27);
+		lblOrderUnit.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
+		orderUnitPanel.add(lblOrderUnit);
 		
-		JPanel footerPanel = new JPanel();
-		footerPanel.setBackground(new Color(255, 192, 203));
-		footerPanel.setPreferredSize(new Dimension(100, 50));
-		contentPane.add(footerPanel, BorderLayout.SOUTH);
-		footerPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		JPanel southPanel = new JPanel();
+		southPanel.setBackground(new Color(255, 192, 203));
+		southPanel.setPreferredSize(new Dimension(100, 50));
+		contentPane.add(southPanel, BorderLayout.SOUTH);
+		southPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel lblNewLabel_5 = new JLabel("---- Order Form -----");
-		lblNewLabel_5.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
-		footerPanel.add(lblNewLabel_5);
+		JLabel lblOrderForm = new JLabel("---- Order Form -----");
+		lblOrderForm.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
+		southPanel.add(lblOrderForm);
 		
-		JPanel orderPanel = new JPanel();
-		orderPanel.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		orderPanel.setBackground(new Color(240, 255, 240));
-		contentPane.add(orderPanel, BorderLayout.CENTER);
-		orderPanel.setLayout(new BorderLayout(0, 0));
+		JPanel centerPanel = new JPanel();
+		centerPanel.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		centerPanel.setBackground(new Color(240, 255, 240));
+		contentPane.add(centerPanel, BorderLayout.CENTER);
+		centerPanel.setLayout(new BorderLayout(0, 0));
 		
 		JPanel productSelectionHeaderPanel = new JPanel();
 		productSelectionHeaderPanel.setBackground(new Color(240, 255, 240));
-		orderPanel.add(productSelectionHeaderPanel, BorderLayout.NORTH);
+		centerPanel.add(productSelectionHeaderPanel, BorderLayout.NORTH);
 		
-		JLabel lblNewLabel_6 = new JLabel("PRODUCT SELECTION");
-		lblNewLabel_6.setFont(new Font("Segoe UI Black", Font.BOLD | Font.ITALIC, 20));
-		productSelectionHeaderPanel.add(lblNewLabel_6);
+		JLabel lblProductSelection = new JLabel("PRODUCT SELECTION");
+		lblProductSelection.setFont(new Font("Segoe UI Black", Font.BOLD | Font.ITALIC, 20));
+		productSelectionHeaderPanel.add(lblProductSelection);
 		
 		JPanel productSelectionPanel = new JPanel();
 		productSelectionPanel.setBackground(new Color(240, 255, 240));
-		orderPanel.add(productSelectionPanel, BorderLayout.CENTER);
-		productSelectionPanel.setLayout(new BoxLayout(productSelectionPanel, BoxLayout.X_AXIS));
+		centerPanel.add(productSelectionPanel, BorderLayout.CENTER);
+		productSelectionPanel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JTabbedPane JTabbedPastriesPage = new JTabbedPane(JTabbedPane.TOP);
 		JTabbedPastriesPage.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		productSelectionPanel.add(JTabbedPastriesPage);
 		
 		JPanel bakedGoodsPanel = new JPanel();
-		bakedGoodsPanel.setLayout(null);
 		JTabbedPastriesPage.addTab("Baked Goods", null, bakedGoodsPanel, null);
+		bakedGoodsPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel lblNewLabel_5_1 = new JLabel("Baked Goods");
-		lblNewLabel_5_1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 15));
-		lblNewLabel_5_1.setBounds(104, 11, 89, 22);
-		bakedGoodsPanel.add(lblNewLabel_5_1);
+		JPanel chocolateCakeSlicePanel = new JPanel();
+		bakedGoodsPanel.add(chocolateCakeSlicePanel);
+		chocolateCakeSlicePanel.setLayout(new BorderLayout(0, 0));
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("Chocolate Cake Slice");
-		chckbxNewCheckBox.setBounds(19, 40, 133, 23);
-		bakedGoodsPanel.add(chckbxNewCheckBox);
+		JPanel panel_4 = new JPanel();
+		chocolateCakeSlicePanel.add(panel_4, BorderLayout.NORTH);
 		
-		JCheckBox chckbxMiniCake = new JCheckBox("Mini Cake");
-		chckbxMiniCake.setBounds(19, 66, 133, 23);
-		bakedGoodsPanel.add(chckbxMiniCake);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		panel_4.add(lblNewLabel);
 		
-		JCheckBox chckbxBrownies = new JCheckBox("Brownies");
-		chckbxBrownies.setBounds(19, 92, 133, 23);
-		bakedGoodsPanel.add(chckbxBrownies);
+		JPanel panel_5 = new JPanel();
+		chocolateCakeSlicePanel.add(panel_5, BorderLayout.CENTER);
+		
+		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
+		panel_5.add(chckbxNewCheckBox_1);
+		
+		JPanel panel_6 = new JPanel();
+		chocolateCakeSlicePanel.add(panel_6, BorderLayout.SOUTH);
+		
+		JLabel lblNewLabel_1 = new JLabel("QTY:");
+		panel_6.add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		panel_6.add(textField);
+		textField.setColumns(10);
+		
+		JPanel miniCakePanel = new JPanel();
+		bakedGoodsPanel.add(miniCakePanel);
+		miniCakePanel.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panel_4_1 = new JPanel();
+		miniCakePanel.add(panel_4_1, BorderLayout.NORTH);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		panel_4_1.add(lblNewLabel_2);
+		
+		JPanel panel_5_1 = new JPanel();
+		miniCakePanel.add(panel_5_1, BorderLayout.CENTER);
+		
+		JCheckBox chckbxNewCheckBox_1_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
+		panel_5_1.add(chckbxNewCheckBox_1_1);
+		
+		JPanel panel_6_1 = new JPanel();
+		miniCakePanel.add(panel_6_1, BorderLayout.SOUTH);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("QTY:");
+		panel_6_1.add(lblNewLabel_1_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		panel_6_1.add(textField_1);
 		
 		JPanel breadAndPastriesPanel = new JPanel();
-		breadAndPastriesPanel.setLayout(null);
-		JTabbedPastriesPage.addTab("Bread and Pastries", null, breadAndPastriesPanel, null);
-		
-		JLabel lblNewLabel_5_1_1 = new JLabel("Bread and Pastries");
-		lblNewLabel_5_1_1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 15));
-		lblNewLabel_5_1_1.setBounds(84, 11, 132, 22);
-		breadAndPastriesPanel.add(lblNewLabel_5_1_1);
-		
-		JCheckBox chckbxEnsaymada = new JCheckBox("Ensaymada");
-		chckbxEnsaymada.setBounds(6, 47, 133, 23);
-		breadAndPastriesPanel.add(chckbxEnsaymada);
-		
-		JCheckBox chckbxCroissant = new JCheckBox("Croissant");
-		chckbxCroissant.setBounds(6, 71, 133, 23);
-		breadAndPastriesPanel.add(chckbxCroissant);
-		
-		JCheckBox chckbxPandesal = new JCheckBox("Pandesal");
-		chckbxPandesal.setBounds(6, 99, 133, 23);
-		breadAndPastriesPanel.add(chckbxPandesal);
+		JTabbedPastriesPage.addTab("Bread And Pastries", null, breadAndPastriesPanel, null);
 		
 		JPanel cookiesAndTreatsPanel = new JPanel();
-		cookiesAndTreatsPanel.setLayout(null);
 		JTabbedPastriesPage.addTab("Cookies and Treats", null, cookiesAndTreatsPanel, null);
 		
-		JLabel lblNewLabel_5_2 = new JLabel("Cookies and Treats");
-		lblNewLabel_5_2.setFont(new Font("Segoe UI Semibold", Font.BOLD, 15));
-		lblNewLabel_5_2.setBounds(75, 11, 128, 22);
-		cookiesAndTreatsPanel.add(lblNewLabel_5_2);
-		
-		JCheckBox chckbxChocolateChipCookie = new JCheckBox("Chocolate Chip Cookie");
-		chckbxChocolateChipCookie.setBounds(17, 40, 133, 23);
-		cookiesAndTreatsPanel.add(chckbxChocolateChipCookie);
-		
-		JCheckBox chckbxOatmealCookie = new JCheckBox("Oatmeal Cookie");
-		chckbxOatmealCookie.setBounds(18, 66, 133, 23);
-		cookiesAndTreatsPanel.add(chckbxOatmealCookie);
-		
-		JCheckBox chckbxCrinkles = new JCheckBox("Crinkles");
-		chckbxCrinkles.setBounds(20, 96, 133, 23);
-		cookiesAndTreatsPanel.add(chckbxCrinkles);
-		
-		JTabbedPane JTabbedAccessoriesPage = new JTabbedPane(JTabbedPane.TOP);
-		JTabbedAccessoriesPage.setBackground(new Color(240, 255, 240));
-		JTabbedAccessoriesPage.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		productSelectionPanel.add(JTabbedAccessoriesPage);
-		
 		JPanel accessoriesPanel = new JPanel();
-		accessoriesPanel.setLayout(null);
-		JTabbedAccessoriesPage.addTab("Accessories", null, accessoriesPanel, null);
-		
-		JLabel lblNewLabel_5_3 = new JLabel("Accessories");
-		lblNewLabel_5_3.setFont(new Font("Segoe UI Semibold", Font.BOLD, 15));
-		lblNewLabel_5_3.setBounds(31, 11, 77, 22);
-		accessoriesPanel.add(lblNewLabel_5_3);
-		
-		JCheckBox chckbxBirthdayCandleSet = new JCheckBox("Birthday Candle Set");
-		chckbxBirthdayCandleSet.setBounds(6, 39, 133, 23);
-		accessoriesPanel.add(chckbxBirthdayCandleSet);
-		
-		JCheckBox chckbxCakeTopper = new JCheckBox("Cake Topper");
-		chckbxCakeTopper.setBounds(6, 63, 133, 23);
-		accessoriesPanel.add(chckbxCakeTopper);
-		
-		JCheckBox chckbxCrinkles_1 = new JCheckBox("Crinkles");
-		chckbxCrinkles_1.setBounds(6, 92, 133, 23);
-		accessoriesPanel.add(chckbxCrinkles_1);
+		JTabbedPastriesPage.addTab("Accessories", null, accessoriesPanel, null);
 		
 		JPanel buttonPanel = new JPanel();
 		FlowLayout flowLayout = (FlowLayout) buttonPanel.getLayout();
-		flowLayout.setHgap(100);
-		orderPanel.add(buttonPanel, BorderLayout.SOUTH);
+		buttonPanel.setPreferredSize(new Dimension(0, 60));
+		flowLayout.setHgap(50);
+		centerPanel.add(buttonPanel, BorderLayout.SOUTH);
 		
-		JButton btnNewButton = new JButton("SUBMIT");
-		btnNewButton.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
-		buttonPanel.add(btnNewButton);
+		JButton btnSubmitOrder = new JButton("SUBMIT ORDER");
+		btnSubmitOrder.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
+		buttonPanel.add(btnSubmitOrder);
 		
-		JButton btnNewButton_1 = new JButton("CLEAR");
-		btnNewButton_1.setFont(new Font("Segoe UI Black", Font.BOLD, 15));
-		buttonPanel.add(btnNewButton_1);
+		JButton btnClearOrder = new JButton("CLEAR ORDER");
+		btnClearOrder.setFont(new Font("Segoe UI Black", Font.BOLD, 15));
+		buttonPanel.add(btnClearOrder);
 		
-		JPanel orderSummaryPanel = new JPanel();
-		orderSummaryPanel.setPreferredSize(new Dimension(300, 100));
-		contentPane.add(orderSummaryPanel, BorderLayout.EAST);
-		orderSummaryPanel.setLayout(null);
+		JPanel eastPanel = new JPanel();
+		eastPanel.setPreferredSize(new Dimension(500, 100));
+		contentPane.add(eastPanel, BorderLayout.EAST);
+		eastPanel.setLayout(new BorderLayout(0, 0));
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 280, 341);
-		orderSummaryPanel.add(scrollPane);
+		JPanel panel = new JPanel();
+		eastPanel.add(panel, BorderLayout.NORTH);
 		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
+		JLabel lblProductSelection_1 = new JLabel("ORDER SUMMARY");
+		lblProductSelection_1.setFont(new Font("Segoe UI Black", Font.BOLD | Font.ITALIC, 20));
+		panel.add(lblProductSelection_1);
 
 	}
 }
