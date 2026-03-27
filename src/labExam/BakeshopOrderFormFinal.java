@@ -35,6 +35,9 @@ import java.awt.GridLayout;
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 import java.awt.Component;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class BakeshopOrderFormFinal extends JFrame {
 
@@ -45,6 +48,8 @@ public class BakeshopOrderFormFinal extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -142,11 +147,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		oderTypePanel.add(lblOrderType);
 		
 		JRadioButton rdbtnPickup = new JRadioButton("Pickup");
+		rdbtnPickup.setBackground(new Color(255, 228, 225));
+		buttonGroup.add(rdbtnPickup);
 		rdbtnPickup.setBounds(6, 31, 71, 29);
 		rdbtnPickup.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		oderTypePanel.add(rdbtnPickup);
 		
 		JRadioButton rdbtnDelivery = new JRadioButton("Delivery");
+		rdbtnDelivery.setBackground(new Color(255, 228, 225));
+		buttonGroup.add(rdbtnDelivery);
 		rdbtnDelivery.setBounds(6, 63, 83, 29);
 		rdbtnDelivery.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		oderTypePanel.add(rdbtnDelivery);
@@ -164,11 +173,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		orderUnitPanel.setLayout(null);
 		
 		JRadioButton rdbtnPerPiece = new JRadioButton("Per Piece");
+		rdbtnPerPiece.setBackground(new Color(255, 228, 225));
+		buttonGroup_1.add(rdbtnPerPiece);
 		rdbtnPerPiece.setBounds(6, 73, 89, 29);
 		rdbtnPerPiece.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		orderUnitPanel.add(rdbtnPerPiece);
 		
 		JRadioButton rdbtnPerDozen = new JRadioButton("Per Dozen");
+		rdbtnPerDozen.setBackground(new Color(255, 228, 225));
+		buttonGroup_1.add(rdbtnPerDozen);
 		rdbtnPerDozen.setBounds(6, 41, 97, 29);
 		rdbtnPerDozen.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		orderUnitPanel.add(rdbtnPerDozen);
@@ -182,11 +195,46 @@ public class BakeshopOrderFormFinal extends JFrame {
 		southPanel.setBackground(new Color(255, 192, 203));
 		southPanel.setPreferredSize(new Dimension(100, 50));
 		contentPane.add(southPanel, BorderLayout.SOUTH);
-		southPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		southPanel.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblOrderForm = new JLabel("---- Order Form -----");
-		lblOrderForm.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
-		southPanel.add(lblOrderForm);
+		JPanel panel_1 = new JPanel();
+		southPanel.add(panel_1);
+		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JLabel lblNewLabel = new JLabel("----- Order Page -----");
+		lblNewLabel.setFont(new Font("Segoe UI Semibold", Font.BOLD, 20));
+		panel_1.add(lblNewLabel);
+		
+		JPanel panel_2 = new JPanel();
+		southPanel.add(panel_2, BorderLayout.WEST);
+		
+		// ---------- Hide Information Button --------------
+		JButton btnHideAndShowInformation = new JButton("Hide Information");
+		btnHideAndShowInformation.setBackground(new Color(255, 127, 80));
+		btnHideAndShowInformation.setForeground(new Color(255, 255, 255));
+		btnHideAndShowInformation.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (westPanel.isVisible()) {
+					westPanel.setVisible(false);
+					btnHideAndShowInformation.setText("Show Information");
+				} else if (!westPanel.isVisible()) {
+					westPanel.setVisible(true);
+					btnHideAndShowInformation.setText("Hide Information");
+				}
+			}
+		});
+		
+		btnHideAndShowInformation.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
+		panel_2.add(btnHideAndShowInformation);
+		
+		JPanel panel_3 = new JPanel();
+		southPanel.add(panel_3, BorderLayout.EAST);
+		
+		JButton btnHideAndShowOrderSummary = new JButton("Hide order summary");
+		btnHideAndShowOrderSummary.setBackground(new Color(255, 127, 80));
+		btnHideAndShowOrderSummary.setForeground(new Color(255, 255, 255));
+		btnHideAndShowOrderSummary.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
+		panel_3.add(btnHideAndShowOrderSummary);
 		
 		JPanel centerPanel = new JPanel();
 		centerPanel.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -310,15 +358,19 @@ public class BakeshopOrderFormFinal extends JFrame {
 		
 		JPanel buttonPanel = new JPanel();
 		FlowLayout flowLayout = (FlowLayout) buttonPanel.getLayout();
-		buttonPanel.setPreferredSize(new Dimension(0, 60));
+		buttonPanel.setPreferredSize(new Dimension(0, 80));
 		flowLayout.setHgap(50);
 		centerPanel.add(buttonPanel, BorderLayout.SOUTH);
 		
 		JButton btnSubmitOrder = new JButton("SUBMIT ORDER");
+		btnSubmitOrder.setForeground(new Color(255, 255, 255));
+		btnSubmitOrder.setBackground(new Color(173, 255, 47));
 		btnSubmitOrder.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
 		buttonPanel.add(btnSubmitOrder);
 		
 		JButton btnClearOrder = new JButton("CLEAR ORDER");
+		btnClearOrder.setForeground(new Color(255, 255, 255));
+		btnClearOrder.setBackground(new Color(255, 99, 71));
 		btnClearOrder.setFont(new Font("Segoe UI Black", Font.BOLD, 15));
 		buttonPanel.add(btnClearOrder);
 		
@@ -326,6 +378,18 @@ public class BakeshopOrderFormFinal extends JFrame {
 		eastPanel.setPreferredSize(new Dimension(300, 100));
 		contentPane.add(eastPanel, BorderLayout.EAST);
 		eastPanel.setLayout(new BorderLayout(0, 0));
+		
+		btnHideAndShowOrderSummary.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (eastPanel.isVisible()) {
+					eastPanel.setVisible(false);
+					btnHideAndShowOrderSummary.setText("Show order information");
+				} else if (!eastPanel.isVisible()) {
+					eastPanel.setVisible(true);
+					btnHideAndShowOrderSummary.setText("Hide order information");
+				}
+			}
+		});
 		
 		JPanel panel = new JPanel();
 		eastPanel.add(panel, BorderLayout.NORTH);
