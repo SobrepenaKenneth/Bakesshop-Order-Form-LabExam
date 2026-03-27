@@ -30,6 +30,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JCheckBox;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import javax.swing.ButtonGroup;
 
 public class BakeshopOrderForm extends JFrame {
 
@@ -37,6 +38,9 @@ public class BakeshopOrderForm extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+	private final ButtonGroup buttonGroup_2 = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -59,7 +63,7 @@ public class BakeshopOrderForm extends JFrame {
 	 */
 	public BakeshopOrderForm() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 903, 522);
+		setBounds(100, 100, 1047, 522);
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -108,27 +112,29 @@ public class BakeshopOrderForm extends JFrame {
 		
 		JLabel lblNewLabel_2_1 = new JLabel("ORDER TYPE");
 		lblNewLabel_2_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
-		lblNewLabel_2_1.setBounds(717, 128, 130, 39);
+		lblNewLabel_2_1.setBounds(590, 123, 130, 39);
 		contentPane.add(lblNewLabel_2_1);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Pickup");
+		buttonGroup_2.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnNewRadioButton.setBounds(717, 172, 71, 23);
+		rdbtnNewRadioButton.setBounds(590, 167, 71, 23);
 		contentPane.add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Delivery");
+		buttonGroup_2.add(rdbtnNewRadioButton_1);
 		rdbtnNewRadioButton_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnNewRadioButton_1.setBounds(717, 201, 85, 23);
+		rdbtnNewRadioButton_1.setBounds(590, 196, 85, 23);
 		contentPane.add(rdbtnNewRadioButton_1);
 		
 		JLabel lblNewLabel_4 = new JLabel("New label");
 		lblNewLabel_4.setIcon(new ImageIcon(BakeshopOrderForm.class.getResource("/labExam/delivery (1).png")));
-		lblNewLabel_4.setBounds(811, 174, 50, 50);
+		lblNewLabel_4.setBounds(684, 169, 50, 50);
 		contentPane.add(lblNewLabel_4);
 		
 		JTabbedPane JTabbedPastriesPage = new JTabbedPane(JTabbedPane.TOP);
 		JTabbedPastriesPage.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		JTabbedPastriesPage.setBounds(10, 230, 309, 208);
+		JTabbedPastriesPage.setBounds(10, 230, 353, 208);
 		contentPane.add(JTabbedPastriesPage);
 		
 		JPanel bakedGoodsPanel = new JPanel();
@@ -196,7 +202,7 @@ public class BakeshopOrderForm extends JFrame {
 		
 		JTabbedPane JTabbedAccessoriesPage = new JTabbedPane(JTabbedPane.TOP);
 		JTabbedAccessoriesPage.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
-		JTabbedAccessoriesPage.setBounds(329, 230, 150, 214);
+		JTabbedAccessoriesPage.setBounds(373, 230, 156, 214);
 		contentPane.add(JTabbedAccessoriesPage);
 		
 		JPanel accessoriesPanel = new JPanel();
@@ -226,39 +232,56 @@ public class BakeshopOrderForm extends JFrame {
 		contentPane.add(lblNewLabel_2_2);
 		
 		JRadioButton rdbtnNewRadioButton_1_1 = new JRadioButton("Per Piece");
+		buttonGroup_1.add(rdbtnNewRadioButton_1_1);
 		rdbtnNewRadioButton_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnNewRadioButton_1_1.setBounds(489, 303, 107, 23);
+		rdbtnNewRadioButton_1_1.setBounds(543, 303, 107, 23);
 		contentPane.add(rdbtnNewRadioButton_1_1);
 		
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Per Dozen");
+		buttonGroup_1.add(rdbtnNewRadioButton_2);
 		rdbtnNewRadioButton_2.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnNewRadioButton_2.setBounds(489, 274, 107, 23);
+		rdbtnNewRadioButton_2.setBounds(543, 274, 107, 23);
 		contentPane.add(rdbtnNewRadioButton_2);
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("ORDER UNIT");
 		lblNewLabel_2_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
-		lblNewLabel_2_1_1.setBounds(489, 230, 130, 39);
+		lblNewLabel_2_1_1.setBounds(543, 230, 130, 39);
 		contentPane.add(lblNewLabel_2_1_1);
 		
 		JLabel lblNewLabel_2_1_1_1 = new JLabel("Payment Method");
 		lblNewLabel_2_1_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
-		lblNewLabel_2_1_1_1.setBounds(489, 329, 177, 39);
+		lblNewLabel_2_1_1_1.setBounds(543, 329, 177, 39);
 		contentPane.add(lblNewLabel_2_1_1_1);
 		
 		JRadioButton rdbtnNewRadioButton_2_1 = new JRadioButton("Cash");
+		buttonGroup.add(rdbtnNewRadioButton_2_1);
 		rdbtnNewRadioButton_2_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnNewRadioButton_2_1.setBounds(489, 372, 107, 23);
+		rdbtnNewRadioButton_2_1.setBounds(543, 372, 107, 23);
 		contentPane.add(rdbtnNewRadioButton_2_1);
 		
 		JRadioButton rdbtnNewRadioButton_1_1_1 = new JRadioButton("GCash");
+		buttonGroup.add(rdbtnNewRadioButton_1_1_1);
 		rdbtnNewRadioButton_1_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnNewRadioButton_1_1_1.setBounds(489, 401, 107, 23);
+		rdbtnNewRadioButton_1_1_1.setBounds(543, 401, 107, 23);
 		contentPane.add(rdbtnNewRadioButton_1_1_1);
 		
 		JRadioButton rdbtnNewRadioButton_1_1_1_1 = new JRadioButton("Credit Card");
+		buttonGroup.add(rdbtnNewRadioButton_1_1_1_1);
 		rdbtnNewRadioButton_1_1_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnNewRadioButton_1_1_1_1.setBounds(489, 427, 107, 23);
+		rdbtnNewRadioButton_1_1_1_1.setBounds(543, 427, 107, 23);
 		contentPane.add(rdbtnNewRadioButton_1_1_1_1);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(761, 120, 260, 352);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(24, 46, 215, 257);
+		panel.add(scrollPane);
+		
+		JTextArea textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
 		
 		
 	}
