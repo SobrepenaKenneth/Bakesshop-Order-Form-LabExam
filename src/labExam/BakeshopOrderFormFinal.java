@@ -243,6 +243,12 @@ public class BakeshopOrderFormFinal extends JFrame {
 		lblOrderUnit.setBounds(76, 7, 97, 27);
 		lblOrderUnit.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
 		orderUnitPanel.add(lblOrderUnit);
+		
+		JPanel helpPanel = new JPanel();
+		helpPanel.setVisible(false);
+		helpPanel.setBounds(0, 0, 260, 357);
+		westPanel.add(helpPanel);
+		helpPanel.setLayout(new CardLayout(0, 0));
 
 		JPanel southPanel = new JPanel();
 		southPanel.setBackground(new Color(255, 192, 203));
@@ -281,12 +287,6 @@ public class BakeshopOrderFormFinal extends JFrame {
 
 		btnHideAndShowInformation.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
 		leftButtonPanelWest.add(btnHideAndShowInformation);
-
-		JButton btnHelp = new JButton("Help");
-		btnHelp.setForeground(Color.WHITE);
-		btnHelp.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
-		btnHelp.setBackground(new Color(102, 51, 0));
-		leftButtonPanelWest.add(btnHelp);
 
 		JPanel rightButtonPanelEast = new JPanel();
 		rightButtonPanelEast.setBackground(new Color(102, 153, 102));
@@ -734,6 +734,8 @@ public class BakeshopOrderFormFinal extends JFrame {
 		flowLayout.setHgap(50);
 		centerPanel.add(buttonPanel, BorderLayout.SOUTH);
 
+	
+		
 		// SUBMIT ORDER
 		JButton btnSubmitOrder = new JButton("SUBMIT ORDER");
 
@@ -766,6 +768,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 			}
 		});
 		
+	
 		// ----- DARK MODE FEATURE ------
 
 		btnDarkMode.addActionListener(new ActionListener() {
@@ -914,6 +917,10 @@ public class BakeshopOrderFormFinal extends JFrame {
 		rdbtnPerDozen_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		rdbtnPerDozen_1_1.setBackground(new Color(255, 250, 205));
 		paymentMethodOptionsPanel.add(rdbtnPerDozen_1_1);
+		
+		JPanel panel = new JPanel();
+		eastPanel.add(panel, BorderLayout.WEST);
+		
 
 		btnSubmitOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
