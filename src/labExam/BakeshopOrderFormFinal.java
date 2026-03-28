@@ -291,7 +291,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 
 		JLabel lblChocolateCakeSliceImg = new JLabel("");
 		lblChocolateCakeSliceImg
-				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/chocolate cake slice.png")));
 		chocolateCakeSectionNorth.add(lblChocolateCakeSliceImg);
 
 		JPanel chocolateCakeCenter = new JPanel();
@@ -324,8 +324,8 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel miniCakeCenter = new JPanel();
 		miniCakePanel.add(miniCakeCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxMinicake = new JCheckBox("Mini Cake - ₱450");
-		miniCakeCenter.add(chckbxMinicake);
+		JCheckBox chckbxNewCheckBox_1_1 = new JCheckBox("Mini Cake - ₱450");
+		miniCakeCenter.add(chckbxNewCheckBox_1_1);
 
 		JPanel miniCakeSouth = new JPanel();
 		miniCakePanel.add(miniCakeSouth, BorderLayout.SOUTH);
@@ -344,15 +344,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel browniesNorth = new JPanel();
 		browniesPanel.add(browniesNorth, BorderLayout.NORTH);
 
-		JLabel lblBrowniesImg = new JLabel("");
-		lblBrowniesImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		browniesNorth.add(lblBrowniesImg);
+		JLabel lblNewLabel_2_1 = new JLabel("");
+		lblNewLabel_2_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/brownies.png")));
+		browniesNorth.add(lblNewLabel_2_1);
 
 		JPanel browniesCenter = new JPanel();
 		browniesPanel.add(browniesCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxBrownies = new JCheckBox("Brownies - ₱60");
-		browniesCenter.add(chckbxBrownies);
+		JCheckBox chckbxNewCheckBox_1_1_1 = new JCheckBox("Brownies (Per Piece) - ₱60");
+		browniesCenter.add(chckbxNewCheckBox_1_1_1);
 
 		JPanel browniesSouth = new JPanel();
 		browniesPanel.add(browniesSouth, BorderLayout.SOUTH);
@@ -374,15 +374,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel ensaymadaNorth = new JPanel();
 		ensaymadaPanel.add(ensaymadaNorth, BorderLayout.NORTH);
 
-		JLabel lblEnsaymadaImg = new JLabel("");
-		lblEnsaymadaImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		ensaymadaNorth.add(lblEnsaymadaImg);
+		JLabel lblNewLabel_2_1_1 = new JLabel("");
+		lblNewLabel_2_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/ensaymada.png")));
+		browniesNorth_1.add(lblNewLabel_2_1_1);
 
 		JPanel ensaymadaCenter = new JPanel();
 		ensaymadaPanel.add(ensaymadaCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxEnsaymada = new JCheckBox("Chocolate Cake Slice - ₱120");
-		ensaymadaCenter.add(chckbxEnsaymada);
+		JCheckBox chckbxNewCheckBox_1_2 = new JCheckBox("Ensaymada - ₱40");
+		chocolateCakeCenter_1.add(chckbxNewCheckBox_1_2);
 
 		JPanel ensaymadaSouth = new JPanel();
 		ensaymadaPanel.add(ensaymadaSouth, BorderLayout.SOUTH);
@@ -401,15 +401,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel croissantNorth = new JPanel();
 		croissantPanel.add(croissantNorth, BorderLayout.NORTH);
 
-		JLabel lblCroissantImg = new JLabel("");
-		lblCroissantImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		croissantNorth.add(lblCroissantImg);
+		JLabel lblNewLabel_2_1_1_1 = new JLabel("");
+		lblNewLabel_2_1_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant1.png")));
+		browniesNorth_1_1.add(lblNewLabel_2_1_1_1);
 
 		JPanel croissantCenter = new JPanel();
 		croissantPanel.add(croissantCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxCroissant = new JCheckBox("Croissant - ₱70");
-		croissantCenter.add(chckbxCroissant);
+		JCheckBox chckbxNewCheckBox_1_2_1 = new JCheckBox("Croissant - ₱70");
+		chocolateCakeCenter_1_1.add(chckbxNewCheckBox_1_2_1);
 
 		JPanel croissantSouth = new JPanel();
 		croissantPanel.add(croissantSouth, BorderLayout.SOUTH);
@@ -428,16 +428,16 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel pandesalNorth = new JPanel();
 		pandesalPanel.add(pandesalNorth, BorderLayout.NORTH);
 
-		JLabel lblPandesalImg = new JLabel("");
-		lblPandesalImg
-				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		pandesalNorth.add(lblPandesalImg);
+		JLabel lblNewLabel_2_1_1_1_1 = new JLabel("");
+		lblNewLabel_2_1_1_1_1
+				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/pandesal.png")));
+		browniesNorth_1_1_1.add(lblNewLabel_2_1_1_1_1);
 
 		JPanel pandesalCenter = new JPanel();
 		pandesalPanel.add(pandesalCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxPandesal = new JCheckBox("Chocolate Cake Slice - ₱120");
-		pandesalCenter.add(chckbxPandesal);
+		JCheckBox chckbxNewCheckBox_1_2_1_1 = new JCheckBox("Pandesal- ₱5");
+		chocolateCakeCenter_1_1_1.add(chckbxNewCheckBox_1_2_1_1);
 
 		JPanel pandesalSouth = new JPanel();
 		pandesalPanel.add(pandesalSouth, BorderLayout.SOUTH);
@@ -459,15 +459,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel chocolateChipCookieNorth = new JPanel();
 		chocolateChipCookiePanel.add(chocolateChipCookieNorth, BorderLayout.NORTH);
 		
-		JLabel lblChocolateChipCookie = new JLabel("");
-		lblChocolateChipCookie.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		chocolateChipCookieNorth.add(lblChocolateChipCookie);
+		JLabel lblNewLabel_2_1_1_2 = new JLabel("");
+		lblNewLabel_2_1_1_2.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/chocolate chip cookie.png")));
+		browniesNorth_1_2.add(lblNewLabel_2_1_1_2);
 		
 		JPanel chocolateChipCookieCenter = new JPanel();
 		chocolateChipCookiePanel.add(chocolateChipCookieCenter, BorderLayout.CENTER);
 		
-		JCheckBox chckbxChocolateChipCookie = new JCheckBox("Chocolate Chip Cookie - ₱25");
-		chocolateChipCookieCenter.add(chckbxChocolateChipCookie);
+		JCheckBox chckbxNewCheckBox_1_2_2 = new JCheckBox("Chocolate Chip Cookie - ₱25");
+		chocolateCakeCenter_1_2.add(chckbxNewCheckBox_1_2_2);
 		
 		JPanel chocolateChipCookieSouth = new JPanel();
 		chocolateChipCookiePanel.add(chocolateChipCookieSouth, BorderLayout.SOUTH);
@@ -487,14 +487,14 @@ public class BakeshopOrderFormFinal extends JFrame {
 		oatmealCookiePanel.add(oatmealCookieNorth, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel_2_1_1_2_1 = new JLabel("");
-		lblNewLabel_2_1_1_2_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		oatmealCookieNorth.add(lblNewLabel_2_1_1_2_1);
+		lblNewLabel_2_1_1_2_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/oatmeal cookie.png")));
+		browniesNorth_1_2_1.add(lblNewLabel_2_1_1_2_1);
 		
 		JPanel oatmealCookieCenter = new JPanel();
 		oatmealCookiePanel.add(oatmealCookieCenter, BorderLayout.CENTER);
 		
-		JCheckBox chckbxNewCheckBox_1_2_2_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
-		oatmealCookieCenter.add(chckbxNewCheckBox_1_2_2_1);
+		JCheckBox chckbxNewCheckBox_1_2_2_1 = new JCheckBox("Oatmeal Cookie - ₱20");
+		chocolateCakeCenter_1_2_1.add(chckbxNewCheckBox_1_2_2_1);
 		
 		JPanel oatmealCookieSouth = new JPanel();
 		oatmealCookiePanel.add(oatmealCookieSouth, BorderLayout.SOUTH);
@@ -514,13 +514,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		crinklesPanel.add(panel_6, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel_2_1_1_2_1_1 = new JLabel("");
-		lblNewLabel_2_1_1_2_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblNewLabel_2_1_1_2_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/crinkles.png")));
 		panel_6.add(lblNewLabel_2_1_1_2_1_1);
 		
 		JPanel panel_6_1 = new JPanel();
 		crinklesPanel.add(panel_6_1, BorderLayout.CENTER);
 		
-		JCheckBox chckbxNewCheckBox_1_2_2_1_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
+		JCheckBox chckbxNewCheckBox_1_2_2_1_1 = new JCheckBox("Crinkles - ₱18");
 		panel_6_1.add(chckbxNewCheckBox_1_2_2_1_1);
 		
 		JPanel panel_7 = new JPanel();
@@ -544,13 +544,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		crinklesPanel_1.add(panel_6_2, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel_2_1_1_2_1_1_1 = new JLabel("");
-		lblNewLabel_2_1_1_2_1_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblNewLabel_2_1_1_2_1_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/bday candle set.png")));
 		panel_6_2.add(lblNewLabel_2_1_1_2_1_1_1);
 		
 		JPanel panel_6_1_1 = new JPanel();
 		crinklesPanel_1.add(panel_6_1_1, BorderLayout.CENTER);
 		
-		JCheckBox chckbxNewCheckBox_1_2_2_1_1_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
+		JCheckBox chckbxNewCheckBox_1_2_2_1_1_1 = new JCheckBox("Birthday Candle Set - ₱50");
 		panel_6_1_1.add(chckbxNewCheckBox_1_2_2_1_1_1);
 		
 		JPanel panel_8 = new JPanel();
@@ -571,13 +571,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		crinklesPanel_1_1.add(panel_9, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel_2_1_1_2_1_1_1_1 = new JLabel("");
-		lblNewLabel_2_1_1_2_1_1_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblNewLabel_2_1_1_2_1_1_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/cake topper.png")));
 		panel_9.add(lblNewLabel_2_1_1_2_1_1_1_1);
 		
 		JPanel panel_10 = new JPanel();
 		crinklesPanel_1_1.add(panel_10, BorderLayout.CENTER);
 		
-		JCheckBox chckbxNewCheckBox_1_2_2_1_1_1_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
+		JCheckBox chckbxNewCheckBox_1_2_2_1_1_1_1 = new JCheckBox("Cake Topper - ₱120");
 		panel_10.add(chckbxNewCheckBox_1_2_2_1_1_1_1);
 		
 		JPanel panel_11 = new JPanel();
@@ -598,13 +598,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		crinklesPanel_1_2.add(panel_9_1, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel_2_1_1_2_1_1_1_1_1 = new JLabel("");
-		lblNewLabel_2_1_1_2_1_1_1_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblNewLabel_2_1_1_2_1_1_1_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/greeting card.png")));
 		panel_9_1.add(lblNewLabel_2_1_1_2_1_1_1_1_1);
 		
 		JPanel panel_12 = new JPanel();
 		crinklesPanel_1_2.add(panel_12, BorderLayout.CENTER);
 		
-		JCheckBox chckbxNewCheckBox_1_2_2_1_1_1_1_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
+		JCheckBox chckbxNewCheckBox_1_2_2_1_1_1_1_1 = new JCheckBox("Greeting Card - ₱80");
 		panel_12.add(chckbxNewCheckBox_1_2_2_1_1_1_1_1);
 		
 		JPanel panel_13 = new JPanel();
