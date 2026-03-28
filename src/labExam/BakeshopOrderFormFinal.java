@@ -38,21 +38,22 @@ public class BakeshopOrderFormFinal extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtName;
 	private JTextField txtPhone;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField txtChocolateCakeSliceQty;
+	private JTextField txtMinicakeQty;
+	private JTextField txtBrowniesQty;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField txtEnsaymada;
+	private JTextField txtCroissantQty;
+	private JTextField txtPandesal;
 	private boolean isDarkMode = true;
-	private JTextField textField_6;
+	private JTextField txtChocolateChipCookieQty;
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
 	private JTextField textField_10;
 	private JTextField textField_11;
+	private final ButtonGroup buttonGroup_2 = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -200,16 +201,16 @@ public class BakeshopOrderFormFinal extends JFrame {
 		contentPane.add(southPanel, BorderLayout.SOUTH);
 		southPanel.setLayout(new BorderLayout(0, 0));
 
-		JPanel panel_1 = new JPanel();
-		southPanel.add(panel_1);
-		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		JPanel orderPageFooterCenter = new JPanel();
+		southPanel.add(orderPageFooterCenter);
+		orderPageFooterCenter.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
-		JLabel lblNewLabel = new JLabel("----- Order Page -----");
-		lblNewLabel.setFont(new Font("Segoe UI Semibold", Font.BOLD, 20));
-		panel_1.add(lblNewLabel);
+		JLabel lblOrderPageFooter = new JLabel("----- Order Page -----");
+		lblOrderPageFooter.setFont(new Font("Segoe UI Semibold", Font.BOLD, 20));
+		orderPageFooterCenter.add(lblOrderPageFooter);
 
-		JPanel panel_2 = new JPanel();
-		southPanel.add(panel_2, BorderLayout.WEST);
+		JPanel leftButtonPanelWest = new JPanel();
+		southPanel.add(leftButtonPanelWest, BorderLayout.WEST);
 
 		// ---------- Hide Information Button --------------
 		JButton btnHideAndShowInformation = new JButton("Hide Information");
@@ -228,22 +229,28 @@ public class BakeshopOrderFormFinal extends JFrame {
 		});
 
 		btnHideAndShowInformation.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
-		panel_2.add(btnHideAndShowInformation);
+		leftButtonPanelWest.add(btnHideAndShowInformation);
+		
+		JButton btnHelp = new JButton("Help");
+		btnHelp.setForeground(Color.WHITE);
+		btnHelp.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
+		btnHelp.setBackground(new Color(64, 224, 208));
+		leftButtonPanelWest.add(btnHelp);
 
-		JPanel panel_3 = new JPanel();
-		southPanel.add(panel_3, BorderLayout.EAST);
+		JPanel rightButtonPanelEast = new JPanel();
+		southPanel.add(rightButtonPanelEast, BorderLayout.EAST);
 
 		JButton btnDarkMode = new JButton("Dark Mode");
 		btnDarkMode.setBackground(new Color(25, 25, 112));
 		btnDarkMode.setForeground(new Color(255, 255, 255));
 		btnDarkMode.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
-		panel_3.add(btnDarkMode);
+		rightButtonPanelEast.add(btnDarkMode);
 
 		JButton btnHideAndShowOrderSummary_1 = new JButton("Hide order summary");
 		btnHideAndShowOrderSummary_1.setForeground(Color.WHITE);
 		btnHideAndShowOrderSummary_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
 		btnHideAndShowOrderSummary_1.setBackground(new Color(255, 127, 80));
-		panel_3.add(btnHideAndShowOrderSummary_1);
+		rightButtonPanelEast.add(btnHideAndShowOrderSummary_1);
 
 		JPanel centerPanel = new JPanel();
 		centerPanel.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -290,18 +297,18 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel chocolateCakeCenter = new JPanel();
 		chocolateCakeSlicePanel.add(chocolateCakeCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
-		chocolateCakeCenter.add(chckbxNewCheckBox_1);
+		JCheckBox chckbxChocolateCakeSlice = new JCheckBox("Chocolate Cake Slice - ₱120");
+		chocolateCakeCenter.add(chckbxChocolateCakeSlice);
 
 		JPanel chocolateCakeSouth = new JPanel();
 		chocolateCakeSlicePanel.add(chocolateCakeSouth, BorderLayout.SOUTH);
 
-		JLabel lblNewLabel_1 = new JLabel("QTY:");
-		chocolateCakeSouth.add(lblNewLabel_1);
+		JLabel lblChocolateCakeSliceQTY = new JLabel("QTY:");
+		chocolateCakeSouth.add(lblChocolateCakeSliceQTY);
 
-		textField = new JTextField();
-		chocolateCakeSouth.add(textField);
-		textField.setColumns(10);
+		txtChocolateCakeSliceQty = new JTextField();
+		chocolateCakeSouth.add(txtChocolateCakeSliceQty);
+		txtChocolateCakeSliceQty.setColumns(10);
 
 		JPanel miniCakePanel = new JPanel();
 		bakedGoodsPanel.add(miniCakePanel);
@@ -310,25 +317,25 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel miniCakeNorth = new JPanel();
 		miniCakePanel.add(miniCakeNorth, BorderLayout.NORTH);
 
-		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		miniCakeNorth.add(lblNewLabel_2);
+		JLabel lblMiniCakeImage = new JLabel("");
+		lblMiniCakeImage.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		miniCakeNorth.add(lblMiniCakeImage);
 
 		JPanel miniCakeCenter = new JPanel();
 		miniCakePanel.add(miniCakeCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxNewCheckBox_1_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
-		miniCakeCenter.add(chckbxNewCheckBox_1_1);
+		JCheckBox chckbxMinicake = new JCheckBox("Mini Cake - ₱450");
+		miniCakeCenter.add(chckbxMinicake);
 
 		JPanel miniCakeSouth = new JPanel();
 		miniCakePanel.add(miniCakeSouth, BorderLayout.SOUTH);
 
-		JLabel lblNewLabel_1_1 = new JLabel("QTY:");
-		miniCakeSouth.add(lblNewLabel_1_1);
+		JLabel lblMinicakeQty = new JLabel("QTY:");
+		miniCakeSouth.add(lblMinicakeQty);
 
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		miniCakeSouth.add(textField_1);
+		txtMinicakeQty = new JTextField();
+		txtMinicakeQty.setColumns(10);
+		miniCakeSouth.add(txtMinicakeQty);
 
 		JPanel browniesPanel = new JPanel();
 		bakedGoodsPanel.add(browniesPanel);
@@ -337,25 +344,25 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel browniesNorth = new JPanel();
 		browniesPanel.add(browniesNorth, BorderLayout.NORTH);
 
-		JLabel lblNewLabel_2_1 = new JLabel("");
-		lblNewLabel_2_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		browniesNorth.add(lblNewLabel_2_1);
+		JLabel lblBrowniesImg = new JLabel("");
+		lblBrowniesImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		browniesNorth.add(lblBrowniesImg);
 
 		JPanel browniesCenter = new JPanel();
 		browniesPanel.add(browniesCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxNewCheckBox_1_1_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
-		browniesCenter.add(chckbxNewCheckBox_1_1_1);
+		JCheckBox chckbxBrownies = new JCheckBox("Brownies - ₱60");
+		browniesCenter.add(chckbxBrownies);
 
 		JPanel browniesSouth = new JPanel();
 		browniesPanel.add(browniesSouth, BorderLayout.SOUTH);
 
-		JLabel lblNewLabel_1_1_1 = new JLabel("QTY:");
-		browniesSouth.add(lblNewLabel_1_1_1);
+		JLabel lblBrowniesQty = new JLabel("QTY:");
+		browniesSouth.add(lblBrowniesQty);
 
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		browniesSouth.add(textField_2);
+		txtBrowniesQty = new JTextField();
+		txtBrowniesQty.setColumns(10);
+		browniesSouth.add(txtBrowniesQty);
 
 		JPanel breadAndPastriesPanel = new JPanel();
 		JTabbedPastriesPage.addTab("Bread And Pastries", null, breadAndPastriesPanel, null);
@@ -364,83 +371,83 @@ public class BakeshopOrderFormFinal extends JFrame {
 		breadAndPastriesPanel.add(ensaymadaPanel);
 		ensaymadaPanel.setLayout(new BorderLayout(0, 0));
 
-		JPanel browniesNorth_1 = new JPanel();
-		ensaymadaPanel.add(browniesNorth_1, BorderLayout.NORTH);
+		JPanel ensaymadaNorth = new JPanel();
+		ensaymadaPanel.add(ensaymadaNorth, BorderLayout.NORTH);
 
-		JLabel lblNewLabel_2_1_1 = new JLabel("");
-		lblNewLabel_2_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		browniesNorth_1.add(lblNewLabel_2_1_1);
+		JLabel lblEnsaymadaImg = new JLabel("");
+		lblEnsaymadaImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		ensaymadaNorth.add(lblEnsaymadaImg);
 
-		JPanel chocolateCakeCenter_1 = new JPanel();
-		ensaymadaPanel.add(chocolateCakeCenter_1, BorderLayout.CENTER);
+		JPanel ensaymadaCenter = new JPanel();
+		ensaymadaPanel.add(ensaymadaCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxNewCheckBox_1_2 = new JCheckBox("Chocolate Cake Slice - ₱120");
-		chocolateCakeCenter_1.add(chckbxNewCheckBox_1_2);
+		JCheckBox chckbxEnsaymada = new JCheckBox("Chocolate Cake Slice - ₱120");
+		ensaymadaCenter.add(chckbxEnsaymada);
 
-		JPanel chocolateCakeSouth_1 = new JPanel();
-		ensaymadaPanel.add(chocolateCakeSouth_1, BorderLayout.SOUTH);
+		JPanel ensaymadaSouth = new JPanel();
+		ensaymadaPanel.add(ensaymadaSouth, BorderLayout.SOUTH);
 
-		JLabel lblNewLabel_1_2 = new JLabel("QTY:");
-		chocolateCakeSouth_1.add(lblNewLabel_1_2);
+		JLabel lblEnsaymadaQty = new JLabel("QTY:");
+		ensaymadaSouth.add(lblEnsaymadaQty);
 
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		chocolateCakeSouth_1.add(textField_3);
+		txtEnsaymada = new JTextField();
+		txtEnsaymada.setColumns(10);
+		ensaymadaSouth.add(txtEnsaymada);
 
 		JPanel croissantPanel = new JPanel();
 		breadAndPastriesPanel.add(croissantPanel);
 		croissantPanel.setLayout(new BorderLayout(0, 0));
 
-		JPanel browniesNorth_1_1 = new JPanel();
-		croissantPanel.add(browniesNorth_1_1, BorderLayout.NORTH);
+		JPanel croissantNorth = new JPanel();
+		croissantPanel.add(croissantNorth, BorderLayout.NORTH);
 
-		JLabel lblNewLabel_2_1_1_1 = new JLabel("");
-		lblNewLabel_2_1_1_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		browniesNorth_1_1.add(lblNewLabel_2_1_1_1);
+		JLabel lblCroissantImg = new JLabel("");
+		lblCroissantImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		croissantNorth.add(lblCroissantImg);
 
-		JPanel chocolateCakeCenter_1_1 = new JPanel();
-		croissantPanel.add(chocolateCakeCenter_1_1, BorderLayout.CENTER);
+		JPanel croissantCenter = new JPanel();
+		croissantPanel.add(croissantCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxNewCheckBox_1_2_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
-		chocolateCakeCenter_1_1.add(chckbxNewCheckBox_1_2_1);
+		JCheckBox chckbxCroissant = new JCheckBox("Croissant - ₱70");
+		croissantCenter.add(chckbxCroissant);
 
-		JPanel chocolateCakeSouth_1_1 = new JPanel();
-		croissantPanel.add(chocolateCakeSouth_1_1, BorderLayout.SOUTH);
+		JPanel croissantSouth = new JPanel();
+		croissantPanel.add(croissantSouth, BorderLayout.SOUTH);
 
-		JLabel lblNewLabel_1_2_1 = new JLabel("QTY:");
-		chocolateCakeSouth_1_1.add(lblNewLabel_1_2_1);
+		JLabel lblCroissantQty = new JLabel("QTY:");
+		croissantSouth.add(lblCroissantQty);
 
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		chocolateCakeSouth_1_1.add(textField_4);
+		txtCroissantQty = new JTextField();
+		txtCroissantQty.setColumns(10);
+		croissantSouth.add(txtCroissantQty);
 
 		JPanel pandesalPanel = new JPanel();
 		breadAndPastriesPanel.add(pandesalPanel);
 		pandesalPanel.setLayout(new BorderLayout(0, 0));
 
-		JPanel browniesNorth_1_1_1 = new JPanel();
-		pandesalPanel.add(browniesNorth_1_1_1, BorderLayout.NORTH);
+		JPanel pandesalNorth = new JPanel();
+		pandesalPanel.add(pandesalNorth, BorderLayout.NORTH);
 
-		JLabel lblNewLabel_2_1_1_1_1 = new JLabel("");
-		lblNewLabel_2_1_1_1_1
+		JLabel lblPandesalImg = new JLabel("");
+		lblPandesalImg
 				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		browniesNorth_1_1_1.add(lblNewLabel_2_1_1_1_1);
+		pandesalNorth.add(lblPandesalImg);
 
-		JPanel chocolateCakeCenter_1_1_1 = new JPanel();
-		pandesalPanel.add(chocolateCakeCenter_1_1_1, BorderLayout.CENTER);
+		JPanel pandesalCenter = new JPanel();
+		pandesalPanel.add(pandesalCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxNewCheckBox_1_2_1_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
-		chocolateCakeCenter_1_1_1.add(chckbxNewCheckBox_1_2_1_1);
+		JCheckBox chckbxPandesal = new JCheckBox("Chocolate Cake Slice - ₱120");
+		pandesalCenter.add(chckbxPandesal);
 
-		JPanel chocolateCakeSouth_1_1_1 = new JPanel();
-		pandesalPanel.add(chocolateCakeSouth_1_1_1, BorderLayout.SOUTH);
+		JPanel pandesalSouth = new JPanel();
+		pandesalPanel.add(pandesalSouth, BorderLayout.SOUTH);
 
-		JLabel lblNewLabel_1_2_1_1 = new JLabel("QTY:");
-		chocolateCakeSouth_1_1_1.add(lblNewLabel_1_2_1_1);
+		JLabel lblPandesalQty = new JLabel("QTY:");
+		pandesalSouth.add(lblPandesalQty);
 
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		chocolateCakeSouth_1_1_1.add(textField_5);
+		txtPandesal = new JTextField();
+		txtPandesal.setColumns(10);
+		pandesalSouth.add(txtPandesal);
 
 		JPanel cookiesAndTreatsPanel = new JPanel();
 		JTabbedPastriesPage.addTab("Cookies and Treats", null, cookiesAndTreatsPanel, null);
@@ -449,55 +456,55 @@ public class BakeshopOrderFormFinal extends JFrame {
 		cookiesAndTreatsPanel.add(chocolateChipCookiePanel);
 		chocolateChipCookiePanel.setLayout(new BorderLayout(0, 0));
 		
-		JPanel browniesNorth_1_2 = new JPanel();
-		chocolateChipCookiePanel.add(browniesNorth_1_2, BorderLayout.NORTH);
+		JPanel chocolateChipCookieNorth = new JPanel();
+		chocolateChipCookiePanel.add(chocolateChipCookieNorth, BorderLayout.NORTH);
 		
-		JLabel lblNewLabel_2_1_1_2 = new JLabel("");
-		lblNewLabel_2_1_1_2.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		browniesNorth_1_2.add(lblNewLabel_2_1_1_2);
+		JLabel lblChocolateChipCookie = new JLabel("");
+		lblChocolateChipCookie.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		chocolateChipCookieNorth.add(lblChocolateChipCookie);
 		
-		JPanel chocolateCakeCenter_1_2 = new JPanel();
-		chocolateChipCookiePanel.add(chocolateCakeCenter_1_2, BorderLayout.CENTER);
+		JPanel chocolateChipCookieCenter = new JPanel();
+		chocolateChipCookiePanel.add(chocolateChipCookieCenter, BorderLayout.CENTER);
 		
-		JCheckBox chckbxNewCheckBox_1_2_2 = new JCheckBox("Chocolate Cake Slice - ₱120");
-		chocolateCakeCenter_1_2.add(chckbxNewCheckBox_1_2_2);
+		JCheckBox chckbxChocolateChipCookie = new JCheckBox("Chocolate Chip Cookie - ₱25");
+		chocolateChipCookieCenter.add(chckbxChocolateChipCookie);
 		
-		JPanel chocolateCakeSouth_1_2 = new JPanel();
-		chocolateChipCookiePanel.add(chocolateCakeSouth_1_2, BorderLayout.SOUTH);
+		JPanel chocolateChipCookieSouth = new JPanel();
+		chocolateChipCookiePanel.add(chocolateChipCookieSouth, BorderLayout.SOUTH);
 		
-		JLabel lblNewLabel_1_2_2 = new JLabel("QTY:");
-		chocolateCakeSouth_1_2.add(lblNewLabel_1_2_2);
+		JLabel lblChocolateChipCookieQty = new JLabel("QTY:");
+		chocolateChipCookieSouth.add(lblChocolateChipCookieQty);
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		chocolateCakeSouth_1_2.add(textField_6);
+		txtChocolateChipCookieQty = new JTextField();
+		txtChocolateChipCookieQty.setColumns(10);
+		chocolateChipCookieSouth.add(txtChocolateChipCookieQty);
 
 		JPanel oatmealCookiePanel = new JPanel();
 		cookiesAndTreatsPanel.add(oatmealCookiePanel);
 		oatmealCookiePanel.setLayout(new BorderLayout(0, 0));
 		
-		JPanel browniesNorth_1_2_1 = new JPanel();
-		oatmealCookiePanel.add(browniesNorth_1_2_1, BorderLayout.NORTH);
+		JPanel oatmealCookieNorth = new JPanel();
+		oatmealCookiePanel.add(oatmealCookieNorth, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel_2_1_1_2_1 = new JLabel("");
 		lblNewLabel_2_1_1_2_1.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
-		browniesNorth_1_2_1.add(lblNewLabel_2_1_1_2_1);
+		oatmealCookieNorth.add(lblNewLabel_2_1_1_2_1);
 		
-		JPanel chocolateCakeCenter_1_2_1 = new JPanel();
-		oatmealCookiePanel.add(chocolateCakeCenter_1_2_1, BorderLayout.CENTER);
+		JPanel oatmealCookieCenter = new JPanel();
+		oatmealCookiePanel.add(oatmealCookieCenter, BorderLayout.CENTER);
 		
 		JCheckBox chckbxNewCheckBox_1_2_2_1 = new JCheckBox("Chocolate Cake Slice - ₱120");
-		chocolateCakeCenter_1_2_1.add(chckbxNewCheckBox_1_2_2_1);
+		oatmealCookieCenter.add(chckbxNewCheckBox_1_2_2_1);
 		
-		JPanel panel_5 = new JPanel();
-		oatmealCookiePanel.add(panel_5, BorderLayout.SOUTH);
+		JPanel oatmealCookieSouth = new JPanel();
+		oatmealCookiePanel.add(oatmealCookieSouth, BorderLayout.SOUTH);
 		
 		JLabel lblNewLabel_1_2_2_1 = new JLabel("QTY:");
-		panel_5.add(lblNewLabel_1_2_2_1);
+		oatmealCookieSouth.add(lblNewLabel_1_2_2_1);
 		
 		textField_7 = new JTextField();
 		textField_7.setColumns(10);
-		panel_5.add(textField_7);
+		oatmealCookieSouth.add(textField_7);
 
 		JPanel crinklesPanel = new JPanel();
 		cookiesAndTreatsPanel.add(crinklesPanel);
@@ -680,14 +687,14 @@ public class BakeshopOrderFormFinal extends JFrame {
 					try {
 
 						// -------- BAKED GOODS --------
-						textField.setText("");
-						chckbxNewCheckBox_1.setSelected(false);
+						txtChocolateCakeSliceQty.setText("");
+						chckbxChocolateCakeSlice.setSelected(false);
 
-						textField_1.setText("");
-						chckbxNewCheckBox_1_1.setSelected(false);
+						txtMinicakeQty.setText("");
+						chckbxMinicake.setSelected(false);
 
-						textField_2.setText("");
-						chckbxNewCheckBox_1_1_1.setSelected(false);
+						txtBrowniesQty.setText("");
+						chckbxBrownies.setSelected(false);
 
 						// -------- ORDER SUMMARY --------
 						orderSummaryArea.setText("");
@@ -704,6 +711,40 @@ public class BakeshopOrderFormFinal extends JFrame {
 		});
 		JScrollPane scrollPane_1 = new JScrollPane();
 		panel_4.add(scrollPane_1, "name_17015894853599");
+		
+		JPanel panel_14 = new JPanel();
+		panel_14.setPreferredSize(new Dimension(100, 80));
+		eastPanel.add(panel_14, BorderLayout.SOUTH);
+		panel_14.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panel_15 = new JPanel();
+		panel_14.add(panel_15, BorderLayout.NORTH);
+		panel_15.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JLabel lblPaymentMethod_1 = new JLabel("PAYMENT METHOD");
+		lblPaymentMethod_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
+		panel_15.add(lblPaymentMethod_1);
+		
+		JPanel panel_16 = new JPanel();
+		panel_14.add(panel_16, BorderLayout.CENTER);
+		
+		JRadioButton rdbtnCash = new JRadioButton("Cash");
+		buttonGroup_2.add(rdbtnCash);
+		rdbtnCash.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		rdbtnCash.setBackground(new Color(255, 228, 225));
+		panel_16.add(rdbtnCash);
+		
+		JRadioButton rdbtnGcash = new JRadioButton("GCash");
+		buttonGroup_2.add(rdbtnGcash);
+		rdbtnGcash.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		rdbtnGcash.setBackground(new Color(255, 228, 225));
+		panel_16.add(rdbtnGcash);
+		
+		JRadioButton rdbtnPerDozen_1_1 = new JRadioButton("Credit Card");
+		buttonGroup_2.add(rdbtnPerDozen_1_1);
+		rdbtnPerDozen_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+		rdbtnPerDozen_1_1.setBackground(new Color(255, 228, 225));
+		panel_16.add(rdbtnPerDozen_1_1);
 
 	}
 }
