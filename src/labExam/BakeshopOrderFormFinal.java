@@ -777,7 +777,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 				if (!isDarkMode) {
 					NorthPanel.setBackground(new Color(102, 153, 102));
 					lblLosamiaPastry.setForeground(new Color(0, 0, 0));
-					btnDarkMode.setText("Light Mode");
+					btnDarkMode.setText("Dark Mode");
 					btnDarkMode.setBackground(new Color(0, 0, 0));
 					btnDarkMode.setForeground(new Color(255, 255, 255));
 					isDarkMode = true;
@@ -786,7 +786,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 					lblLosamiaPastry.setForeground(new Color(255, 255, 255));
 					btnDarkMode.setBackground(new Color(25, 25, 112));
 					btnDarkMode.setForeground(new Color(255, 255, 255));
-					btnDarkMode.setText("Dark Mode");
+					btnDarkMode.setText("Light Mode");
 					isDarkMode = false;
 				}
 			}
