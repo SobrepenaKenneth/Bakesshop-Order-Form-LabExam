@@ -419,6 +419,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		browniesPanel.add(browniesCenter, BorderLayout.CENTER);
 
 		chckbxBrownies = new JCheckBox("Brownies - ₱60");
+		chckbxBrownies.setBackground(new Color(255, 153, 102));
 		browniesCenter.add(chckbxBrownies);
 
 		JPanel browniesSouth = new JPanel();
