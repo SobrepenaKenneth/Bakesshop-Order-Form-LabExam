@@ -53,7 +53,34 @@ public class BakeshopOrderFormFinal extends JFrame {
 	private JTextField txtBirthdayCandleQty;
 	private JTextField txtCakeTopperQty;
 	private JTextField greetingsCardQty;
+<<<<<<< Updated upstream
 	private final ButtonGroup buttonGroup_2 = new ButtonGroup();
+=======
+	private final ButtonGroup buttonGroupPayment = new ButtonGroup();
+
+	private JCheckBox chckbxChocolateCakeSlice;
+	private JCheckBox chckbxMinicake;
+	private JCheckBox chckbxBrownies;
+	private JCheckBox chckbxEnsaymada;
+	private JCheckBox chckbxCroissant;
+	private JCheckBox chckbxPandesal;
+	private JCheckBox chckbxChocolateChipCookie;
+	private JCheckBox chckbxOatmealCookie;
+	private JCheckBox chckbxCrinkles;
+	private JCheckBox chckbxBirthdayCandle;
+	private JCheckBox chckbxCakeTopper;
+	private JCheckBox chckbxGreetingsCard;
+
+	private double subtotal = 0;
+	private double discount = 0;
+	private double finalTotal = 0;
+
+	private boolean itemSelected = false;
+	private JRadioButton rdbtnPerDozen;
+	private JRadioButton rdbtnPerPiece;
+
+	private int receiptNo = 1;
+>>>>>>> Stashed changes
 
 	/**
 	 * Launch the application.
@@ -335,8 +362,12 @@ public class BakeshopOrderFormFinal extends JFrame {
 		miniCakeCenter.setBackground(new Color(255, 153, 102));
 		miniCakePanel.add(miniCakeCenter, BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
 		JCheckBox chckbxMinicake = new JCheckBox("Mini Cake - ₱450");
 		chckbxMinicake.setBackground(new Color(255, 153, 102));
+=======
+		chckbxMinicake = new JCheckBox("Mini Cake - ₱450");
+>>>>>>> Stashed changes
 		miniCakeCenter.add(chckbxMinicake);
 
 		JPanel miniCakeSouth = new JPanel();
@@ -366,8 +397,12 @@ public class BakeshopOrderFormFinal extends JFrame {
 		browniesCenter.setBackground(new Color(255, 153, 102));
 		browniesPanel.add(browniesCenter, BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
 		JCheckBox chckbxBrownies = new JCheckBox("Brownies - ₱60");
 		chckbxBrownies.setBackground(new Color(255, 153, 102));
+=======
+		chckbxBrownies = new JCheckBox("Brownies - ₱60");
+>>>>>>> Stashed changes
 		browniesCenter.add(chckbxBrownies);
 
 		JPanel browniesSouth = new JPanel();
@@ -401,8 +436,12 @@ public class BakeshopOrderFormFinal extends JFrame {
 		ensaymadaCenter.setBackground(new Color(255, 153, 102));
 		ensaymadaPanel.add(ensaymadaCenter, BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
 		JCheckBox chckbxEnsaymada = new JCheckBox("Ensaymada - ₱40");
 		chckbxEnsaymada.setBackground(new Color(255, 153, 102));
+=======
+		chckbxEnsaymada = new JCheckBox("Ensaymada - ₱40");
+>>>>>>> Stashed changes
 		ensaymadaCenter.add(chckbxEnsaymada);
 
 		JPanel ensaymadaSouth = new JPanel();
@@ -432,8 +471,12 @@ public class BakeshopOrderFormFinal extends JFrame {
 		croissantCenter.setBackground(new Color(255, 153, 102));
 		croissantPanel.add(croissantCenter, BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
 		JCheckBox chckbxCroissant = new JCheckBox("Croissant - ₱70");
 		chckbxCroissant.setBackground(new Color(255, 153, 102));
+=======
+		chckbxCroissant = new JCheckBox("Croissant - ₱70");
+>>>>>>> Stashed changes
 		croissantCenter.add(chckbxCroissant);
 
 		JPanel croissantSouth = new JPanel();
@@ -463,8 +506,12 @@ public class BakeshopOrderFormFinal extends JFrame {
 		pandesalCenter.setBackground(new Color(255, 153, 102));
 		pandesalPanel.add(pandesalCenter, BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
 		JCheckBox chckbxPandesal = new JCheckBox("Pandesal - ₱5");
 		chckbxPandesal.setBackground(new Color(255, 153, 102));
+=======
+		chckbxPandesal = new JCheckBox("Pandesal - ₱5");
+>>>>>>> Stashed changes
 		pandesalCenter.add(chckbxPandesal);
 
 		JPanel pandesalSouth = new JPanel();
@@ -485,6 +532,20 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel chocolateChipCookiePanel = new JPanel();
 		cookiesAndTreatsPanel.add(chocolateChipCookiePanel);
 		chocolateChipCookiePanel.setLayout(new BorderLayout(0, 0));
+<<<<<<< Updated upstream
+=======
+
+		JPanel chocolateChipCookieNorth = new JPanel();
+		chocolateChipCookiePanel.add(chocolateChipCookieNorth, BorderLayout.NORTH);
+
+		JLabel lblChocolateChipCookieImg = new JLabel("");
+		lblChocolateChipCookieImg
+				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/chocolate chip cookie.png")));
+		chocolateChipCookieNorth.add(lblChocolateChipCookieImg);
+
+		JPanel chocolateChipCookieCenter = new JPanel();
+		chocolateChipCookiePanel.add(chocolateChipCookieCenter, BorderLayout.CENTER);
+>>>>>>> Stashed changes
 
 		JPanel chocolateChipCookieNorth = new JPanel();
 		chocolateChipCookieNorth.setBackground(new Color(255, 153, 102));
@@ -517,6 +578,20 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel oatmealCookiePanel = new JPanel();
 		cookiesAndTreatsPanel.add(oatmealCookiePanel);
 		oatmealCookiePanel.setLayout(new BorderLayout(0, 0));
+<<<<<<< Updated upstream
+=======
+
+		JPanel oatmealCookieNorth = new JPanel();
+		oatmealCookiePanel.add(oatmealCookieNorth, BorderLayout.NORTH);
+
+		JLabel lblOatmealCookieImg = new JLabel("");
+		lblOatmealCookieImg
+				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/oatmeal cookie.png")));
+		oatmealCookieNorth.add(lblOatmealCookieImg);
+
+		JPanel oatmealCookieCenter = new JPanel();
+		oatmealCookiePanel.add(oatmealCookieCenter, BorderLayout.CENTER);
+>>>>>>> Stashed changes
 
 		JPanel oatmealCookieNorth = new JPanel();
 		oatmealCookieNorth.setBackground(new Color(255, 153, 102));
@@ -685,8 +760,12 @@ public class BakeshopOrderFormFinal extends JFrame {
 
 		// SUBMIT ORDER
 		JButton btnSubmitOrder = new JButton("SUBMIT ORDER");
+<<<<<<< Updated upstream
 		
 		
+=======
+
+>>>>>>> Stashed changes
 		btnSubmitOrder.setForeground(new Color(255, 255, 255));
 		btnSubmitOrder.setBackground(new Color(102, 51, 0));
 		btnSubmitOrder.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
@@ -727,7 +806,10 @@ public class BakeshopOrderFormFinal extends JFrame {
 		});
 
 		JPanel headerOrderSummaryPanel = new JPanel();
+<<<<<<< Updated upstream
 		headerOrderSummaryPanel.setBackground(new Color(240, 230, 140));
+=======
+>>>>>>> Stashed changes
 		eastPanel.add(headerOrderSummaryPanel, BorderLayout.NORTH);
 
 		JLabel lblOrderSummary = new JLabel("ORDER SUMMARY");
@@ -739,7 +821,10 @@ public class BakeshopOrderFormFinal extends JFrame {
 		orderSummaryAreaPanel.setLayout(new CardLayout(0, 0));
 
 		JTextArea orderSummaryArea = new JTextArea();
+<<<<<<< Updated upstream
 		orderSummaryArea.setBackground(new Color(255, 250, 205));
+=======
+>>>>>>> Stashed changes
 		orderSummaryAreaPanel.add(orderSummaryArea, "name_16997509283899");
 
 		btnClearOrder.addActionListener(new ActionListener() {
@@ -760,7 +845,11 @@ public class BakeshopOrderFormFinal extends JFrame {
 
 						txtBrowniesQty.setText("");
 						chckbxBrownies.setSelected(false);
+<<<<<<< Updated upstream
 						
+=======
+
+>>>>>>> Stashed changes
 						// CLEAR ALL OTHER FIELDS
 
 						txtEnsaymada.setText("");
@@ -821,7 +910,10 @@ public class BakeshopOrderFormFinal extends JFrame {
 		paymentMethodPanel.setLayout(new BorderLayout(0, 0));
 
 		JPanel paymentMethodHeader = new JPanel();
+<<<<<<< Updated upstream
 		paymentMethodHeader.setBackground(new Color(240, 230, 140));
+=======
+>>>>>>> Stashed changes
 		paymentMethodPanel.add(paymentMethodHeader, BorderLayout.NORTH);
 		paymentMethodHeader.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
@@ -830,25 +922,40 @@ public class BakeshopOrderFormFinal extends JFrame {
 		paymentMethodHeader.add(lblPaymentMethod_1);
 
 		JPanel paymentMethodOptionsPanel = new JPanel();
+<<<<<<< Updated upstream
 		paymentMethodOptionsPanel.setBackground(new Color(240, 230, 140));
+=======
+>>>>>>> Stashed changes
 		paymentMethodPanel.add(paymentMethodOptionsPanel, BorderLayout.CENTER);
 
 		JRadioButton rdbtnCash = new JRadioButton("Cash");
 		buttonGroup_2.add(rdbtnCash);
 		rdbtnCash.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+<<<<<<< Updated upstream
 		rdbtnCash.setBackground(new Color(255, 250, 205));
+=======
+		rdbtnCash.setBackground(new Color(255, 228, 225));
+>>>>>>> Stashed changes
 		paymentMethodOptionsPanel.add(rdbtnCash);
 
 		JRadioButton rdbtnGcash = new JRadioButton("GCash");
 		buttonGroup_2.add(rdbtnGcash);
 		rdbtnGcash.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+<<<<<<< Updated upstream
 		rdbtnGcash.setBackground(new Color(255, 250, 205));
+=======
+		rdbtnGcash.setBackground(new Color(255, 228, 225));
+>>>>>>> Stashed changes
 		paymentMethodOptionsPanel.add(rdbtnGcash);
 
 		JRadioButton rdbtnPerDozen_1_1 = new JRadioButton("Credit Card");
 		buttonGroup_2.add(rdbtnPerDozen_1_1);
 		rdbtnPerDozen_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+<<<<<<< Updated upstream
 		rdbtnPerDozen_1_1.setBackground(new Color(255, 250, 205));
+=======
+		rdbtnPerDozen_1_1.setBackground(new Color(255, 228, 225));
+>>>>>>> Stashed changes
 		paymentMethodOptionsPanel.add(rdbtnPerDozen_1_1);
 		
 		btnSubmitOrder.addActionListener(new ActionListener() {
@@ -957,6 +1064,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		} catch (Exception e) {
 			return 0;
 		}
+<<<<<<< Updated upstream
 	}
 
 	private void processItem(JTextArea area, boolean isDozen, JCheckBox cb, JTextField qtyField, String name,
@@ -998,5 +1106,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		area.append("\nDiscount: ₱" + discount);
 		area.append("\nTotal: ₱" + total);
 		area.append("\n---------------------------\n");
+=======
+>>>>>>> Stashed changes
 	}
 }
