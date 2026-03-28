@@ -15,7 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
 import javax.swing.JRadioButton;
 import java.awt.CardLayout;
 import javax.swing.JScrollPane;
@@ -41,19 +40,51 @@ public class BakeshopOrderFormFinal extends JFrame {
 	private JTextField txtChocolateCakeSliceQty;
 	private JTextField txtMinicakeQty;
 	private JTextField txtBrowniesQty;
-	private final ButtonGroup buttonGroup = new ButtonGroup();
-	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+	private final ButtonGroup buttonGroupOrderType = new ButtonGroup();
+	private final ButtonGroup buttonGroupUnit = new ButtonGroup();
 	private JTextField txtEnsaymada;
 	private JTextField txtCroissantQty;
 	private JTextField txtPandesal;
 	private boolean isDarkMode = true;
 	private JTextField txtChocolateChipCookieQty;
+<<<<<<< Updated upstream
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
 	private JTextField textField_10;
 	private JTextField textField_11;
 	private final ButtonGroup buttonGroup_2 = new ButtonGroup();
+=======
+	private JTextField txtOatmealCookieQty;
+	private JTextField txtCrinklesQty;
+	private JTextField txtBirthdayCandleQty;
+	private JTextField txtCakeTopperQty;
+	private JTextField greetingsCardQty;
+	private final ButtonGroup buttonGroupPayment = new ButtonGroup();
+
+	private JCheckBox chckbxChocolateCakeSlice;
+	private JCheckBox chckbxMinicake;
+	private JCheckBox chckbxBrownies;
+	private JCheckBox chckbxEnsaymada;
+	private JCheckBox chckbxCroissant;
+	private JCheckBox chckbxPandesal;
+	private JCheckBox chckbxChocolateChipCookie;
+	private JCheckBox chckbxOatmealCookie;
+	private JCheckBox chckbxCrinkles;
+	private JCheckBox chckbxBirthdayCandle;
+	private JCheckBox chckbxCakeTopper;
+	private JCheckBox chckbxGreetingsCard;
+
+	private double subtotal = 0;
+	private double discount = 0;
+	private double finalTotal = 0;
+
+	private boolean itemSelected = false;
+	private JRadioButton rdbtnPerDozen;
+	private JRadioButton rdbtnPerPiece;
+
+	private int receiptNo = 1;
+>>>>>>> Stashed changes
 
 	/**
 	 * Launch the application.
@@ -128,6 +159,16 @@ public class BakeshopOrderFormFinal extends JFrame {
 		txtName.setColumns(20);
 		customerInformationPanel.add(txtName);
 
+		txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+			public void keyTyped(java.awt.event.KeyEvent e) {
+				char c = e.getKeyChar();
+
+				if (!Character.isLetter(c) && c != ' ') {
+					e.consume(); // blocks input
+				}
+			}
+		});
+
 		JLabel lblPhone = new JLabel("Phone:");
 		lblPhone.setBounds(10, 71, 64, 16);
 		lblPhone.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
@@ -137,6 +178,20 @@ public class BakeshopOrderFormFinal extends JFrame {
 		txtPhone.setBounds(74, 72, 166, 20);
 		txtPhone.setColumns(20);
 		customerInformationPanel.add(txtPhone);
+
+		txtPhone.addKeyListener(new java.awt.event.KeyAdapter() {
+			public void keyTyped(java.awt.event.KeyEvent e) {
+				char c = e.getKeyChar();
+
+				if (!Character.isDigit(c)) {
+					e.consume();
+				}
+
+				if (txtPhone.getText().length() >= 11) {
+					e.consume();
+				}
+			}
+		});
 
 		JPanel oderTypePanel = new JPanel();
 		oderTypePanel.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
@@ -151,15 +206,17 @@ public class BakeshopOrderFormFinal extends JFrame {
 		oderTypePanel.add(lblOrderType);
 
 		JRadioButton rdbtnPickup = new JRadioButton("Pickup");
+		rdbtnPickup.setActionCommand("Pickup");
 		rdbtnPickup.setBackground(new Color(255, 228, 225));
-		buttonGroup.add(rdbtnPickup);
+		buttonGroupOrderType.add(rdbtnPickup);
 		rdbtnPickup.setBounds(6, 31, 71, 29);
 		rdbtnPickup.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		oderTypePanel.add(rdbtnPickup);
 
 		JRadioButton rdbtnDelivery = new JRadioButton("Delivery");
+		rdbtnDelivery.setActionCommand("Delivery");
 		rdbtnDelivery.setBackground(new Color(255, 228, 225));
-		buttonGroup.add(rdbtnDelivery);
+		buttonGroupOrderType.add(rdbtnDelivery);
 		rdbtnDelivery.setBounds(6, 63, 83, 29);
 		rdbtnDelivery.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		oderTypePanel.add(rdbtnDelivery);
@@ -176,16 +233,16 @@ public class BakeshopOrderFormFinal extends JFrame {
 		westPanel.add(orderUnitPanel);
 		orderUnitPanel.setLayout(null);
 
-		JRadioButton rdbtnPerPiece = new JRadioButton("Per Piece");
+		rdbtnPerPiece = new JRadioButton("Per Piece");
 		rdbtnPerPiece.setBackground(new Color(255, 228, 225));
-		buttonGroup_1.add(rdbtnPerPiece);
+		buttonGroupUnit.add(rdbtnPerPiece);
 		rdbtnPerPiece.setBounds(6, 73, 89, 29);
 		rdbtnPerPiece.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		orderUnitPanel.add(rdbtnPerPiece);
 
-		JRadioButton rdbtnPerDozen = new JRadioButton("Per Dozen");
+		rdbtnPerDozen = new JRadioButton("Per Dozen");
 		rdbtnPerDozen.setBackground(new Color(255, 228, 225));
-		buttonGroup_1.add(rdbtnPerDozen);
+		buttonGroupUnit.add(rdbtnPerDozen);
 		rdbtnPerDozen.setBounds(6, 41, 97, 29);
 		rdbtnPerDozen.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		orderUnitPanel.add(rdbtnPerDozen);
@@ -297,7 +354,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel chocolateCakeCenter = new JPanel();
 		chocolateCakeSlicePanel.add(chocolateCakeCenter, BorderLayout.CENTER);
 
-		JCheckBox chckbxChocolateCakeSlice = new JCheckBox("Chocolate Cake Slice - ₱120");
+		chckbxChocolateCakeSlice = new JCheckBox("Chocolate Cake Slice - ₱120");
 		chocolateCakeCenter.add(chckbxChocolateCakeSlice);
 
 		JPanel chocolateCakeSouth = new JPanel();
@@ -324,8 +381,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel miniCakeCenter = new JPanel();
 		miniCakePanel.add(miniCakeCenter, BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
 		JCheckBox chckbxNewCheckBox_1_1 = new JCheckBox("Mini Cake - ₱450");
 		miniCakeCenter.add(chckbxNewCheckBox_1_1);
+=======
+		chckbxMinicake = new JCheckBox("Mini Cake - ₱450");
+		miniCakeCenter.add(chckbxMinicake);
+>>>>>>> Stashed changes
 
 		JPanel miniCakeSouth = new JPanel();
 		miniCakePanel.add(miniCakeSouth, BorderLayout.SOUTH);
@@ -351,8 +413,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel browniesCenter = new JPanel();
 		browniesPanel.add(browniesCenter, BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
 		JCheckBox chckbxNewCheckBox_1_1_1 = new JCheckBox("Brownies (Per Piece) - ₱60");
 		browniesCenter.add(chckbxNewCheckBox_1_1_1);
+=======
+		chckbxBrownies = new JCheckBox("Brownies - ₱60");
+		browniesCenter.add(chckbxBrownies);
+>>>>>>> Stashed changes
 
 		JPanel browniesSouth = new JPanel();
 		browniesPanel.add(browniesSouth, BorderLayout.SOUTH);
@@ -381,8 +448,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel ensaymadaCenter = new JPanel();
 		ensaymadaPanel.add(ensaymadaCenter, BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
 		JCheckBox chckbxNewCheckBox_1_2 = new JCheckBox("Ensaymada - ₱40");
 		chocolateCakeCenter_1.add(chckbxNewCheckBox_1_2);
+=======
+		chckbxEnsaymada = new JCheckBox("Ensaymada - ₱40");
+		ensaymadaCenter.add(chckbxEnsaymada);
+>>>>>>> Stashed changes
 
 		JPanel ensaymadaSouth = new JPanel();
 		ensaymadaPanel.add(ensaymadaSouth, BorderLayout.SOUTH);
@@ -408,8 +480,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel croissantCenter = new JPanel();
 		croissantPanel.add(croissantCenter, BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
 		JCheckBox chckbxNewCheckBox_1_2_1 = new JCheckBox("Croissant - ₱70");
 		chocolateCakeCenter_1_1.add(chckbxNewCheckBox_1_2_1);
+=======
+		chckbxCroissant = new JCheckBox("Croissant - ₱70");
+		croissantCenter.add(chckbxCroissant);
+>>>>>>> Stashed changes
 
 		JPanel croissantSouth = new JPanel();
 		croissantPanel.add(croissantSouth, BorderLayout.SOUTH);
@@ -436,8 +513,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel pandesalCenter = new JPanel();
 		pandesalPanel.add(pandesalCenter, BorderLayout.CENTER);
 
+<<<<<<< Updated upstream
 		JCheckBox chckbxNewCheckBox_1_2_1_1 = new JCheckBox("Pandesal- ₱5");
 		chocolateCakeCenter_1_1_1.add(chckbxNewCheckBox_1_2_1_1);
+=======
+		chckbxPandesal = new JCheckBox("Pandesal - ₱5");
+		pandesalCenter.add(chckbxPandesal);
+>>>>>>> Stashed changes
 
 		JPanel pandesalSouth = new JPanel();
 		pandesalPanel.add(pandesalSouth, BorderLayout.SOUTH);
@@ -465,10 +547,17 @@ public class BakeshopOrderFormFinal extends JFrame {
 		
 		JPanel chocolateChipCookieCenter = new JPanel();
 		chocolateChipCookiePanel.add(chocolateChipCookieCenter, BorderLayout.CENTER);
+<<<<<<< Updated upstream
 		
 		JCheckBox chckbxNewCheckBox_1_2_2 = new JCheckBox("Chocolate Chip Cookie - ₱25");
 		chocolateCakeCenter_1_2.add(chckbxNewCheckBox_1_2_2);
 		
+=======
+
+		chckbxChocolateChipCookie = new JCheckBox("Chocolate Chip Cookie - ₱25");
+		chocolateChipCookieCenter.add(chckbxChocolateChipCookie);
+
+>>>>>>> Stashed changes
 		JPanel chocolateChipCookieSouth = new JPanel();
 		chocolateChipCookiePanel.add(chocolateChipCookieSouth, BorderLayout.SOUTH);
 		
@@ -492,10 +581,17 @@ public class BakeshopOrderFormFinal extends JFrame {
 		
 		JPanel oatmealCookieCenter = new JPanel();
 		oatmealCookiePanel.add(oatmealCookieCenter, BorderLayout.CENTER);
+<<<<<<< Updated upstream
 		
 		JCheckBox chckbxNewCheckBox_1_2_2_1 = new JCheckBox("Oatmeal Cookie - ₱20");
 		chocolateCakeCenter_1_2_1.add(chckbxNewCheckBox_1_2_2_1);
 		
+=======
+
+		chckbxOatmealCookie = new JCheckBox("Oatmeal Cookie- ₱20");
+		oatmealCookieCenter.add(chckbxOatmealCookie);
+
+>>>>>>> Stashed changes
 		JPanel oatmealCookieSouth = new JPanel();
 		oatmealCookiePanel.add(oatmealCookieSouth, BorderLayout.SOUTH);
 		
@@ -509,6 +605,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JPanel crinklesPanel = new JPanel();
 		cookiesAndTreatsPanel.add(crinklesPanel);
 		crinklesPanel.setLayout(new BorderLayout(0, 0));
+<<<<<<< Updated upstream
 		
 		JPanel panel_6 = new JPanel();
 		crinklesPanel.add(panel_6, BorderLayout.NORTH);
@@ -616,6 +713,117 @@ public class BakeshopOrderFormFinal extends JFrame {
 		textField_11 = new JTextField();
 		textField_11.setColumns(10);
 		panel_13.add(textField_11);
+=======
+
+		JPanel crinklesNorth = new JPanel();
+		crinklesPanel.add(crinklesNorth, BorderLayout.NORTH);
+
+		JLabel lblCrinklesImg = new JLabel("");
+		lblCrinklesImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/crinkles.png")));
+		crinklesNorth.add(lblCrinklesImg);
+
+		JPanel crinklesCenter = new JPanel();
+		crinklesPanel.add(crinklesCenter, BorderLayout.CENTER);
+
+		chckbxCrinkles = new JCheckBox("Crinkles - ₱18");
+		crinklesCenter.add(chckbxCrinkles);
+
+		JPanel crinklesSouth = new JPanel();
+		crinklesPanel.add(crinklesSouth, BorderLayout.SOUTH);
+
+		JLabel lblCrinklesQty = new JLabel("QTY:");
+		crinklesSouth.add(lblCrinklesQty);
+
+		txtCrinklesQty = new JTextField();
+		txtCrinklesQty.setColumns(10);
+		crinklesSouth.add(txtCrinklesQty);
+
+		JPanel accessoriesPanel = new JPanel();
+		JTabbedPastriesPage.addTab("Accessories", null, accessoriesPanel, null);
+
+		JPanel birthdayCandlesSetPanel = new JPanel();
+		accessoriesPanel.add(birthdayCandlesSetPanel);
+		birthdayCandlesSetPanel.setLayout(new BorderLayout(0, 0));
+
+		JPanel birthdayCandleNorth = new JPanel();
+		birthdayCandlesSetPanel.add(birthdayCandleNorth, BorderLayout.NORTH);
+
+		JLabel lblBirthdayCandleImg = new JLabel("");
+		lblBirthdayCandleImg
+				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/bday candle set.png")));
+		birthdayCandleNorth.add(lblBirthdayCandleImg);
+
+		JPanel birthdayCandleCenter = new JPanel();
+		birthdayCandlesSetPanel.add(birthdayCandleCenter, BorderLayout.CENTER);
+
+		chckbxBirthdayCandle = new JCheckBox("Birthday Candle Set - ₱50");
+		birthdayCandleCenter.add(chckbxBirthdayCandle);
+
+		JPanel birthdayCandleSouth = new JPanel();
+		birthdayCandlesSetPanel.add(birthdayCandleSouth, BorderLayout.SOUTH);
+
+		JLabel lblBirthdayCandleQty = new JLabel("QTY:");
+		birthdayCandleSouth.add(lblBirthdayCandleQty);
+
+		txtBirthdayCandleQty = new JTextField();
+		txtBirthdayCandleQty.setColumns(10);
+		birthdayCandleSouth.add(txtBirthdayCandleQty);
+
+		JPanel cakeTopperPanel = new JPanel();
+		accessoriesPanel.add(cakeTopperPanel);
+		cakeTopperPanel.setLayout(new BorderLayout(0, 0));
+
+		JPanel cakeTopperNorth = new JPanel();
+		cakeTopperPanel.add(cakeTopperNorth, BorderLayout.NORTH);
+
+		JLabel lblCakeTopperImg = new JLabel("");
+		lblCakeTopperImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/cake topper.png")));
+		cakeTopperNorth.add(lblCakeTopperImg);
+
+		JPanel cakeTopperCenter = new JPanel();
+		cakeTopperPanel.add(cakeTopperCenter, BorderLayout.CENTER);
+
+		chckbxCakeTopper = new JCheckBox("Cake Topper - ₱120");
+		cakeTopperCenter.add(chckbxCakeTopper);
+
+		JPanel cakeTopperSouth = new JPanel();
+		cakeTopperPanel.add(cakeTopperSouth, BorderLayout.SOUTH);
+
+		JLabel lblCakeTopperQty = new JLabel("QTY:");
+		cakeTopperSouth.add(lblCakeTopperQty);
+
+		txtCakeTopperQty = new JTextField();
+		txtCakeTopperQty.setColumns(10);
+		cakeTopperSouth.add(txtCakeTopperQty);
+
+		JPanel greetingsCardPanel = new JPanel();
+		accessoriesPanel.add(greetingsCardPanel);
+		greetingsCardPanel.setLayout(new BorderLayout(0, 0));
+
+		JPanel greetingsCardNorth = new JPanel();
+		greetingsCardPanel.add(greetingsCardNorth, BorderLayout.NORTH);
+
+		JLabel lblGreetingsCardImg = new JLabel("");
+		lblGreetingsCardImg
+				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/greeting card.png")));
+		greetingsCardNorth.add(lblGreetingsCardImg);
+
+		JPanel greetingsCardCenter = new JPanel();
+		greetingsCardPanel.add(greetingsCardCenter, BorderLayout.CENTER);
+
+		chckbxGreetingsCard = new JCheckBox("Greetings Card - ₱80");
+		greetingsCardCenter.add(chckbxGreetingsCard);
+
+		JPanel greetingsCardSouth = new JPanel();
+		greetingsCardPanel.add(greetingsCardSouth, BorderLayout.SOUTH);
+
+		JLabel lblGreetingsCardQty = new JLabel("QTY:");
+		greetingsCardSouth.add(lblGreetingsCardQty);
+
+		greetingsCardQty = new JTextField();
+		greetingsCardQty.setColumns(10);
+		greetingsCardSouth.add(greetingsCardQty);
+>>>>>>> Stashed changes
 
 		JPanel buttonPanel = new JPanel();
 		FlowLayout flowLayout = (FlowLayout) buttonPanel.getLayout();
@@ -624,6 +832,10 @@ public class BakeshopOrderFormFinal extends JFrame {
 		centerPanel.add(buttonPanel, BorderLayout.SOUTH);
 
 		JButton btnSubmitOrder = new JButton("SUBMIT ORDER");
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 		btnSubmitOrder.setForeground(new Color(255, 255, 255));
 		btnSubmitOrder.setBackground(new Color(173, 255, 47));
 		btnSubmitOrder.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
@@ -695,6 +907,47 @@ public class BakeshopOrderFormFinal extends JFrame {
 
 						txtBrowniesQty.setText("");
 						chckbxBrownies.setSelected(false);
+<<<<<<< Updated upstream
+=======
+
+						// CLEAR ALL OTHER FIELDS
+
+						txtEnsaymada.setText("");
+						chckbxEnsaymada.setSelected(false);
+
+						txtCroissantQty.setText("");
+						chckbxCroissant.setSelected(false);
+
+						txtPandesal.setText("");
+						chckbxPandesal.setSelected(false);
+
+						txtChocolateChipCookieQty.setText("");
+						chckbxChocolateChipCookie.setSelected(false);
+
+						txtOatmealCookieQty.setText("");
+						chckbxOatmealCookie.setSelected(false);
+
+						txtCrinklesQty.setText("");
+						chckbxCrinkles.setSelected(false);
+
+						txtBirthdayCandleQty.setText("");
+						chckbxBirthdayCandle.setSelected(false);
+
+						txtCakeTopperQty.setText("");
+						chckbxCakeTopper.setSelected(false);
+
+						greetingsCardQty.setText("");
+						chckbxGreetingsCard.setSelected(false);
+
+						// clear radio buttons
+						buttonGroupUnit.clearSelection();
+						buttonGroupPayment.clearSelection();
+						buttonGroupOrderType.clearSelection();
+
+						// clear name & phone
+						txtName.setText("");
+						txtPhone.setText("");
+>>>>>>> Stashed changes
 
 						// -------- ORDER SUMMARY --------
 						orderSummaryArea.setText("");
@@ -729,22 +982,340 @@ public class BakeshopOrderFormFinal extends JFrame {
 		panel_14.add(panel_16, BorderLayout.CENTER);
 		
 		JRadioButton rdbtnCash = new JRadioButton("Cash");
-		buttonGroup_2.add(rdbtnCash);
+		buttonGroupPayment.add(rdbtnCash);
 		rdbtnCash.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		rdbtnCash.setBackground(new Color(255, 228, 225));
 		panel_16.add(rdbtnCash);
 		
 		JRadioButton rdbtnGcash = new JRadioButton("GCash");
-		buttonGroup_2.add(rdbtnGcash);
+		buttonGroupPayment.add(rdbtnGcash);
 		rdbtnGcash.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		rdbtnGcash.setBackground(new Color(255, 228, 225));
 		panel_16.add(rdbtnGcash);
 		
 		JRadioButton rdbtnPerDozen_1_1 = new JRadioButton("Credit Card");
-		buttonGroup_2.add(rdbtnPerDozen_1_1);
+		buttonGroupPayment.add(rdbtnPerDozen_1_1);
 		rdbtnPerDozen_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		rdbtnPerDozen_1_1.setBackground(new Color(255, 228, 225));
+<<<<<<< Updated upstream
 		panel_16.add(rdbtnPerDozen_1_1);
 
+=======
+		paymentMethodOptionsPanel.add(rdbtnPerDozen_1_1);
+
+		btnSubmitOrder.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				if (!validateInputs(chckbxChocolateCakeSlice, chckbxMinicake, chckbxBrownies, chckbxEnsaymada,
+						chckbxCroissant, chckbxPandesal, chckbxChocolateChipCookie, chckbxOatmealCookie, chckbxCrinkles,
+						chckbxBirthdayCandle, chckbxCakeTopper, chckbxGreetingsCard))
+					return;
+
+				int confirm = JOptionPane.showConfirmDialog(null, "Confirm Order?", "Confirmation",
+						JOptionPane.YES_NO_OPTION);
+				if (confirm != JOptionPane.YES_OPTION)
+					return;
+
+				computeOrder(orderSummaryArea);
+			}
+		});
+
+	}// END OF CONSTRUCTOR
+
+	private void computeOrder(JTextArea receiptArea) {
+
+		String deliveryType = "";
+
+		if (buttonGroupOrderType.getSelection() != null) {
+			deliveryType = buttonGroupOrderType.getSelection().getActionCommand();
+		}
+
+		boolean isDozen = rdbtnPerDozen.isSelected();
+		String unitLabel = isDozen ? "Per Dozen" : "Per Piece";
+		int multiplier = isDozen ? 12 : 1;
+
+		subtotal = 0;
+		discount = 0;
+		finalTotal = 0;
+		itemSelected = false;
+
+		receiptArea.setText("");
+
+		// HEADER
+		receiptArea.append("========== Losamia Pastry ==========\n\n");
+		receiptArea.append(String.format("Customer: %s\n", txtName.getText()));
+		receiptArea.append(String.format("Phone: %s\n", txtPhone.getText()));
+		receiptArea.append(String.format("Order Type: %s\n\n", deliveryType));
+
+		receiptArea.append(String.format("%-20s %-5s %-15s %-10s\n", "Item", "Qty", "Unit", "Total"));
+		receiptArea.append("-----------------------------------------------------\n");
+
+		// ================= ITEMS =================
+
+		if (chckbxChocolateCakeSlice.isSelected()) {
+			int qty = getQuantity(txtChocolateCakeSliceQty);
+			if (qty <= 0) {
+				returnError("Chocolate Cake Slice");
+				return;
+			}
+
+			double total = 120 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Chocolate Cake", qty, unitLabel, total));
+		}
+
+		if (chckbxMinicake.isSelected()) {
+			int qty = getQuantity(txtMinicakeQty);
+			if (qty <= 0) {
+				returnError("Mini Cake");
+				return;
+			}
+
+			double total = 450 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Mini Cake", qty, unitLabel, total));
+		}
+
+		if (chckbxBrownies.isSelected()) {
+			int qty = getQuantity(txtBrowniesQty);
+			if (qty <= 0) {
+				returnError("Brownies");
+				return;
+			}
+
+			double total = 60 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Brownies", qty, unitLabel, total));
+		}
+
+		if (chckbxEnsaymada.isSelected()) {
+			int qty = getQuantity(txtEnsaymada);
+			if (qty <= 0) {
+				returnError("Ensaymada");
+				return;
+			}
+
+			double total = 40 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Ensaymada", qty, unitLabel, total));
+		}
+
+		if (chckbxCroissant.isSelected()) {
+			int qty = getQuantity(txtCroissantQty);
+			if (qty <= 0) {
+				returnError("Croissant");
+				return;
+			}
+
+			double total = 70 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Croissant", qty, unitLabel, total));
+		}
+
+		if (chckbxPandesal.isSelected()) {
+			int qty = getQuantity(txtPandesal);
+			if (qty <= 0) {
+				returnError("Pandesal");
+				return;
+			}
+
+			double total = 5 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Pandesal", qty, unitLabel, total));
+		}
+
+		if (chckbxChocolateChipCookie.isSelected()) {
+			int qty = getQuantity(txtChocolateChipCookieQty);
+			if (qty <= 0) {
+				returnError("Chocolate Chip Cookie");
+				return;
+			}
+
+			double total = 25 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Chocolate Cookie", qty, unitLabel, total));
+		}
+
+		if (chckbxOatmealCookie.isSelected()) {
+			int qty = getQuantity(txtOatmealCookieQty);
+			if (qty <= 0) {
+				returnError("Oatmeal Cookie");
+				return;
+			}
+
+			double total = 20 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Oatmeal Cookie", qty, unitLabel, total));
+		}
+
+		if (chckbxCrinkles.isSelected()) {
+			int qty = getQuantity(txtCrinklesQty);
+			if (qty <= 0) {
+				returnError("Crinkles");
+				return;
+			}
+
+			double total = 18 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Crinkles", qty, unitLabel, total));
+		}
+
+		if (chckbxBirthdayCandle.isSelected()) {
+			int qty = getQuantity(txtBirthdayCandleQty);
+			if (qty <= 0) {
+				returnError("Birthday Candle");
+				return;
+			}
+
+			double total = 50 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Candle Set", qty, unitLabel, total));
+		}
+
+		if (chckbxCakeTopper.isSelected()) {
+			int qty = getQuantity(txtCakeTopperQty);
+			if (qty <= 0) {
+				returnError("Cake Topper");
+				return;
+			}
+
+			double total = 120 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Cake Topper", qty, unitLabel, total));
+		}
+
+		if (chckbxGreetingsCard.isSelected()) {
+			int qty = getQuantity(greetingsCardQty);
+			if (qty <= 0) {
+				returnError("Greeting Card");
+				return;
+			}
+
+			double total = 80 * qty * multiplier;
+			subtotal += total;
+			itemSelected = true;
+
+			receiptArea.append(String.format("%-20s %-5d %-15s %-10.2f\n", "Greeting Card", qty, unitLabel, total));
+		}
+
+		// ================= VALIDATION =================
+		if (!itemSelected) {
+			JOptionPane.showMessageDialog(this, "No items selected!");
+			return;
+		}
+
+		receiptArea.append("-----------------------------------------------------\n");
+
+		// ================= COMPUTATION =================
+		double vat = subtotal * 0.12;
+
+		if (subtotal > 2000) {
+			discount += subtotal * 0.05;
+		}
+
+		finalTotal = subtotal + vat - discount;
+
+		receiptArea.append(String.format("%-25s ₱%10.2f\n", "Subtotal:", subtotal));
+		receiptArea.append(String.format("%-25s ₱%10.2f\n", "VAT (12%):", vat));
+		receiptArea.append(String.format("%-25s -₱%9.2f\n", "Discount:", discount));
+		receiptArea.append(String.format("%-25s ₱%10.2f\n", "Grand Total:", finalTotal));
+
+		// Payment
+		String payment = "";
+		if (buttonGroupPayment.getSelection() != null) {
+			payment = buttonGroupPayment.getSelection().getActionCommand();
+		}
+
+		receiptArea.append("\nPayment: " + payment);
+
+		// Footer
+		receiptArea.append("\nReceipt No: " + receiptNo++);
+		receiptArea.append("\n" + java.time.LocalDateTime.now());
+	}
+
+	private void returnError(String item) {
+		JOptionPane.showMessageDialog(this, "Invalid quantity for " + item);
+	}
+
+	private boolean validateInputs(JCheckBox... checkboxes) {
+
+		if (!txtPhone.getText().matches("09[0-9]{9}")) {
+			JOptionPane.showMessageDialog(this, "Invalid PH phone number format!");
+			return false;
+		}
+
+		if (txtName.getText().trim().isEmpty()) {
+			JOptionPane.showMessageDialog(this, "Customer name is required!");
+			return false;
+		}
+
+		if (!txtName.getText().matches("[a-zA-Z\\s]+")) {
+			JOptionPane.showMessageDialog(this, "Name must contain letters only!");
+			return false;
+		}
+
+		boolean hasSelected = false;
+		for (JCheckBox cb : checkboxes) {
+			if (cb.isSelected()) {
+				hasSelected = true;
+				break;
+			}
+		}
+
+		if (buttonGroupOrderType.getSelection() == null) {
+			JOptionPane.showMessageDialog(this, "Select order type!");
+			return false;
+		}
+
+		if (!hasSelected) {
+			JOptionPane.showMessageDialog(this, "Select at least one product!");
+			return false;
+		}
+
+		if (buttonGroupUnit.getSelection() == null) {
+			JOptionPane.showMessageDialog(this, "Select order unit!");
+			return false;
+		}
+
+		if (buttonGroupPayment.getSelection() == null) {
+			JOptionPane.showMessageDialog(this, "Select payment method!");
+			return false;
+		}
+
+		return true;
+	}
+
+	private int getQuantity(JTextField field) {
+		try {
+			int qty = Integer.parseInt(field.getText().trim());
+			if (qty <= 0)
+				return 0;
+			return qty;
+		} catch (Exception e) {
+			return 0;
+		}
+>>>>>>> Stashed changes
 	}
 }
