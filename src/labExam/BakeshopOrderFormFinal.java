@@ -305,7 +305,6 @@ public class BakeshopOrderFormFinal extends JFrame {
 		});
 		btnHideAndShowOrderSummary_1.setForeground(Color.WHITE);
 		btnHideAndShowOrderSummary_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
-
 		btnHideAndShowOrderSummary_1.setBackground(new Color(102, 51, 0));
 		rightButtonPanelEast.add(btnHideAndShowOrderSummary_1);
 
@@ -394,6 +393,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		miniCakeCenter.add(chckbxMinicake);
 
 		JPanel miniCakeSouth = new JPanel();
+		miniCakeSouth.setBackground(new Color(255, 153, 102));
 		miniCakePanel.add(miniCakeSouth, BorderLayout.SOUTH);
 
 		JLabel lblMinicakeQty = new JLabel("QTY:");
@@ -489,6 +489,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		croissantCenter.add(chckbxCroissant);
 
 		JPanel croissantSouth = new JPanel();
+		croissantSouth.setBackground(new Color(255, 153, 102));
 		croissantPanel.add(croissantSouth, BorderLayout.SOUTH);
 
 		JLabel lblCroissantQty = new JLabel("QTY:");
@@ -570,6 +571,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		oatmealCookiePanel.setLayout(new BorderLayout(0, 0));
 
 		JPanel oatmealCookieNorth = new JPanel();
+		oatmealCookieNorth.setBackground(new Color(255, 153, 102));
 		oatmealCookiePanel.add(oatmealCookieNorth, BorderLayout.NORTH);
 
 		JLabel lblOatmealCookieImg = new JLabel("");
@@ -578,12 +580,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		oatmealCookieNorth.add(lblOatmealCookieImg);
 
 		JPanel oatmealCookieCenter = new JPanel();
+		oatmealCookieCenter.setBackground(new Color(255, 153, 102));
 		oatmealCookiePanel.add(oatmealCookieCenter, BorderLayout.CENTER);
 
 		chckbxOatmealCookie = new JCheckBox("Oatmeal Cookie- ₱20");
+		chckbxOatmealCookie.setBackground(new Color(255, 153, 102));
 		oatmealCookieCenter.add(chckbxOatmealCookie);
 
 		JPanel oatmealCookieSouth = new JPanel();
+		oatmealCookieSouth.setBackground(new Color(255, 153, 102));
 		oatmealCookiePanel.add(oatmealCookieSouth, BorderLayout.SOUTH);
 
 		JLabel lblOatmealCookieQty = new JLabel("QTY:");
@@ -598,6 +603,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		crinklesPanel.setLayout(new BorderLayout(0, 0));
 
 		JPanel crinklesNorth = new JPanel();
+		crinklesNorth.setBackground(new Color(255, 153, 102));
 		crinklesPanel.add(crinklesNorth, BorderLayout.NORTH);
 
 		JLabel lblCrinklesImg = new JLabel("");
@@ -605,12 +611,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		crinklesNorth.add(lblCrinklesImg);
 
 		JPanel crinklesCenter = new JPanel();
+		crinklesCenter.setBackground(new Color(255, 153, 102));
 		crinklesPanel.add(crinklesCenter, BorderLayout.CENTER);
 
 		chckbxCrinkles = new JCheckBox("Crinkles - ₱18");
+		chckbxCrinkles.setBackground(new Color(255, 153, 102));
 		crinklesCenter.add(chckbxCrinkles);
 
 		JPanel crinklesSouth = new JPanel();
+		crinklesSouth.setBackground(new Color(255, 153, 102));
 		crinklesPanel.add(crinklesSouth, BorderLayout.SOUTH);
 
 		JLabel lblCrinklesQty = new JLabel("QTY:");
@@ -621,6 +630,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		crinklesSouth.add(txtCrinklesQty);
 
 		JPanel accessoriesPanel = new JPanel();
+		accessoriesPanel.setBackground(new Color(204, 102, 51));
 		JTabbedPastriesPage.addTab("Accessories", null, accessoriesPanel, null);
 
 		JPanel birthdayCandlesSetPanel = new JPanel();
@@ -628,6 +638,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		birthdayCandlesSetPanel.setLayout(new BorderLayout(0, 0));
 
 		JPanel birthdayCandleNorth = new JPanel();
+		birthdayCandleNorth.setBackground(new Color(255, 153, 102));
 		birthdayCandlesSetPanel.add(birthdayCandleNorth, BorderLayout.NORTH);
 
 		JLabel lblBirthdayCandleImg = new JLabel("");
@@ -636,12 +647,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		birthdayCandleNorth.add(lblBirthdayCandleImg);
 
 		JPanel birthdayCandleCenter = new JPanel();
+		birthdayCandleCenter.setBackground(new Color(255, 153, 102));
 		birthdayCandlesSetPanel.add(birthdayCandleCenter, BorderLayout.CENTER);
 
 		chckbxBirthdayCandle = new JCheckBox("Birthday Candle Set - ₱50");
+		chckbxBirthdayCandle.setBackground(new Color(255, 153, 102));
 		birthdayCandleCenter.add(chckbxBirthdayCandle);
 
 		JPanel birthdayCandleSouth = new JPanel();
+		birthdayCandleSouth.setBackground(new Color(255, 153, 102));
 		birthdayCandlesSetPanel.add(birthdayCandleSouth, BorderLayout.SOUTH);
 
 		JLabel lblBirthdayCandleQty = new JLabel("QTY:");
@@ -656,6 +670,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		cakeTopperPanel.setLayout(new BorderLayout(0, 0));
 
 		JPanel cakeTopperNorth = new JPanel();
+		cakeTopperNorth.setBackground(new Color(255, 153, 102));
 		cakeTopperPanel.add(cakeTopperNorth, BorderLayout.NORTH);
 
 		JLabel lblCakeTopperImg = new JLabel("");
@@ -663,12 +678,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		cakeTopperNorth.add(lblCakeTopperImg);
 
 		JPanel cakeTopperCenter = new JPanel();
+		cakeTopperCenter.setBackground(new Color(255, 153, 102));
 		cakeTopperPanel.add(cakeTopperCenter, BorderLayout.CENTER);
 
 		chckbxCakeTopper = new JCheckBox("Cake Topper - ₱120");
+		chckbxCakeTopper.setBackground(new Color(255, 153, 102));
 		cakeTopperCenter.add(chckbxCakeTopper);
 
 		JPanel cakeTopperSouth = new JPanel();
+		cakeTopperSouth.setBackground(new Color(255, 153, 102));
 		cakeTopperPanel.add(cakeTopperSouth, BorderLayout.SOUTH);
 
 		JLabel lblCakeTopperQty = new JLabel("QTY:");
@@ -683,6 +701,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		greetingsCardPanel.setLayout(new BorderLayout(0, 0));
 
 		JPanel greetingsCardNorth = new JPanel();
+		greetingsCardNorth.setBackground(new Color(255, 153, 102));
 		greetingsCardPanel.add(greetingsCardNorth, BorderLayout.NORTH);
 
 		JLabel lblGreetingsCardImg = new JLabel("");
@@ -691,12 +710,15 @@ public class BakeshopOrderFormFinal extends JFrame {
 		greetingsCardNorth.add(lblGreetingsCardImg);
 
 		JPanel greetingsCardCenter = new JPanel();
+		greetingsCardCenter.setBackground(new Color(255, 153, 102));
 		greetingsCardPanel.add(greetingsCardCenter, BorderLayout.CENTER);
 
 		chckbxGreetingsCard = new JCheckBox("Greetings Card - ₱80");
+		chckbxGreetingsCard.setBackground(new Color(255, 153, 102));
 		greetingsCardCenter.add(chckbxGreetingsCard);
 
 		JPanel greetingsCardSouth = new JPanel();
+		greetingsCardSouth.setBackground(new Color(255, 153, 102));
 		greetingsCardPanel.add(greetingsCardSouth, BorderLayout.SOUTH);
 
 		JLabel lblGreetingsCardQty = new JLabel("QTY:");
@@ -708,6 +730,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 
 		JPanel buttonPanel = new JPanel();
 		FlowLayout flowLayout = (FlowLayout) buttonPanel.getLayout();
+		buttonPanel.setBackground(new Color(255, 218, 185));
 		buttonPanel.setPreferredSize(new Dimension(0, 80));
 		flowLayout.setHgap(50);
 		centerPanel.add(buttonPanel, BorderLayout.SOUTH);
@@ -716,13 +739,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		JButton btnSubmitOrder = new JButton("SUBMIT ORDER");
 
 		btnSubmitOrder.setForeground(new Color(255, 255, 255));
-		btnSubmitOrder.setBackground(new Color(173, 255, 47));
+		btnSubmitOrder.setBackground(new Color(102, 51, 0));
 		btnSubmitOrder.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
 		buttonPanel.add(btnSubmitOrder);
 
 		JButton btnClearOrder = new JButton("CLEAR ORDER");
 		btnClearOrder.setForeground(new Color(255, 255, 255));
-		btnClearOrder.setBackground(new Color(255, 99, 71));
+		btnClearOrder.setBackground(new Color(102, 51, 0));
 		btnClearOrder.setFont(new Font("Segoe UI Black", Font.BOLD, 15));
 		buttonPanel.add(btnClearOrder);
 
@@ -737,7 +760,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		btnDarkMode.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!isDarkMode) {
-					NorthPanel.setBackground(new Color(255, 228, 196));
+					NorthPanel.setBackground(new Color(102, 153, 102));
 					lblLosamiaPastry.setForeground(new Color(0, 0, 0));
 					btnDarkMode.setText("Light Mode");
 					btnDarkMode.setBackground(new Color(0, 0, 0));
@@ -755,6 +778,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		});
 
 		JPanel headerOrderSummaryPanel = new JPanel();
+		headerOrderSummaryPanel.setBackground(new Color(240, 230, 140));
 		eastPanel.add(headerOrderSummaryPanel, BorderLayout.NORTH);
 
 		JLabel lblOrderSummary = new JLabel("ORDER SUMMARY");
@@ -766,6 +790,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		orderSummaryAreaPanel.setLayout(new CardLayout(0, 0));
 
 		JTextArea orderSummaryArea = new JTextArea();
+		orderSummaryArea.setBackground(new Color(255, 250, 205));
 		orderSummaryAreaPanel.add(orderSummaryArea, "name_16997509283899");
 
 		btnClearOrder.addActionListener(new ActionListener() {
@@ -847,6 +872,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		paymentMethodPanel.setLayout(new BorderLayout(0, 0));
 
 		JPanel paymentMethodHeader = new JPanel();
+		paymentMethodHeader.setBackground(new Color(240, 230, 140));
 		paymentMethodPanel.add(paymentMethodHeader, BorderLayout.NORTH);
 		paymentMethodHeader.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
@@ -855,24 +881,25 @@ public class BakeshopOrderFormFinal extends JFrame {
 		paymentMethodHeader.add(lblPaymentMethod_1);
 
 		JPanel paymentMethodOptionsPanel = new JPanel();
+		paymentMethodOptionsPanel.setBackground(new Color(240, 230, 140));
 		paymentMethodPanel.add(paymentMethodOptionsPanel, BorderLayout.CENTER);
 
 		JRadioButton rdbtnCash = new JRadioButton("Cash");
 		buttonGroupPayment.add(rdbtnCash);
 		rdbtnCash.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnCash.setBackground(new Color(255, 228, 225));
+		rdbtnCash.setBackground(new Color(255, 250, 205));
 		paymentMethodOptionsPanel.add(rdbtnCash);
 
 		JRadioButton rdbtnGcash = new JRadioButton("GCash");
 		buttonGroupPayment.add(rdbtnGcash);
 		rdbtnGcash.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnGcash.setBackground(new Color(255, 228, 225));
+		rdbtnGcash.setBackground(new Color(255, 250, 205));
 		paymentMethodOptionsPanel.add(rdbtnGcash);
 
 		JRadioButton rdbtnPerDozen_1_1 = new JRadioButton("Credit Card");
 		buttonGroupPayment.add(rdbtnPerDozen_1_1);
 		rdbtnPerDozen_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
-		rdbtnPerDozen_1_1.setBackground(new Color(255, 228, 225));
+		rdbtnPerDozen_1_1.setBackground(new Color(255, 250, 205));
 		paymentMethodOptionsPanel.add(rdbtnPerDozen_1_1);
 
 		btnSubmitOrder.addActionListener(new ActionListener() {
