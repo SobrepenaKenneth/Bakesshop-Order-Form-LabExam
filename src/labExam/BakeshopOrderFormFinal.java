@@ -298,16 +298,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		btnDarkMode.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
 		rightButtonPanelEast.add(btnDarkMode);
 
-		JButton btnHideAndShowOrderSummary_1 = new JButton("Hide order summary");
-		btnHideAndShowOrderSummary_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnHideAndShowOrderSummary_1.setForeground(Color.WHITE);
-		btnHideAndShowOrderSummary_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
+		JButton btnHideAndShowOrderSummary = new JButton("Hide order summary");
 
-		btnHideAndShowOrderSummary_1.setBackground(new Color(102, 51, 0));
-		rightButtonPanelEast.add(btnHideAndShowOrderSummary_1);
+		btnHideAndShowOrderSummary.setForeground(Color.WHITE);
+		btnHideAndShowOrderSummary.setFont(new Font("Segoe UI Black", Font.PLAIN, 12));
+
+		btnHideAndShowOrderSummary.setBackground(new Color(102, 51, 0));
+		rightButtonPanelEast.add(btnHideAndShowOrderSummary);
 
 		JPanel centerPanel = new JPanel();
 		centerPanel.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -342,6 +339,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		bakedGoodsPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
 		JPanel chocolateCakeSlicePanel = new JPanel();
+		chocolateCakeSlicePanel.setBorder(null);
 		bakedGoodsPanel.add(chocolateCakeSlicePanel);
 		chocolateCakeSlicePanel.setLayout(new BorderLayout(0, 0));
 
@@ -732,6 +730,18 @@ public class BakeshopOrderFormFinal extends JFrame {
 		contentPane.add(eastPanel, BorderLayout.EAST);
 		eastPanel.setLayout(new BorderLayout(0, 0));
 
+		btnHideAndShowOrderSummary.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (eastPanel.isVisible()) {
+					eastPanel.setVisible(false);
+					btnHideAndShowOrderSummary.setText("Show Information");
+				} else if (!eastPanel.isVisible()) {
+					eastPanel.setVisible(true);
+					btnHideAndShowOrderSummary.setText("Hide Information");
+				}
+			}
+		});
+		
 		// ----- DARK MODE FEATURE ------
 
 		btnDarkMode.addActionListener(new ActionListener() {
@@ -766,6 +776,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		orderSummaryAreaPanel.setLayout(new CardLayout(0, 0));
 
 		JTextArea orderSummaryArea = new JTextArea();
+		orderSummaryArea.setEditable(false);
 		orderSummaryAreaPanel.add(orderSummaryArea, "name_16997509283899");
 
 		btnClearOrder.addActionListener(new ActionListener() {
