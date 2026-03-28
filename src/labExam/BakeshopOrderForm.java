@@ -761,10 +761,10 @@ public class BakeshopOrderForm extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (eastPanel.isVisible()) {
 					eastPanel.setVisible(false);
-					btnHideAndShowOrderSummary.setText("Show Information");
+					btnHideAndShowOrderSummary.setText("Show Order Summary");
 				} else if (!eastPanel.isVisible()) {
 					eastPanel.setVisible(true);
-					btnHideAndShowOrderSummary.setText("Hide Information");
+					btnHideAndShowOrderSummary.setText("Hide Order Summary");
 				}
 			}
 		});
