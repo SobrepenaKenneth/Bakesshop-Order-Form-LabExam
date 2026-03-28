@@ -291,7 +291,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 
 		JLabel lblChocolateCakeSliceImg = new JLabel("");
 		lblChocolateCakeSliceImg
-				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/chocolate cake slice.png")));
 		chocolateCakeSectionNorth.add(lblChocolateCakeSliceImg);
 
 		JPanel chocolateCakeCenter = new JPanel();
@@ -318,7 +318,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		miniCakePanel.add(miniCakeNorth, BorderLayout.NORTH);
 
 		JLabel lblMiniCakeImage = new JLabel("");
-		lblMiniCakeImage.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblMiniCakeImage.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/mini cake.png")));
 		miniCakeNorth.add(lblMiniCakeImage);
 
 		JPanel miniCakeCenter = new JPanel();
@@ -345,7 +345,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		browniesPanel.add(browniesNorth, BorderLayout.NORTH);
 
 		JLabel lblBrowniesImg = new JLabel("");
-		lblBrowniesImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblBrowniesImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/brownies.png")));
 		browniesNorth.add(lblBrowniesImg);
 
 		JPanel browniesCenter = new JPanel();
@@ -375,7 +375,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		ensaymadaPanel.add(ensaymadaNorth, BorderLayout.NORTH);
 
 		JLabel lblEnsaymadaImg = new JLabel("");
-		lblEnsaymadaImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblEnsaymadaImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/ensaymada.png")));
 		ensaymadaNorth.add(lblEnsaymadaImg);
 
 		JPanel ensaymadaCenter = new JPanel();
@@ -402,7 +402,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		croissantPanel.add(croissantNorth, BorderLayout.NORTH);
 
 		JLabel lblCroissantImg = new JLabel("");
-		lblCroissantImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblCroissantImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant1.png")));
 		croissantNorth.add(lblCroissantImg);
 
 		JPanel croissantCenter = new JPanel();
@@ -430,7 +430,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 
 		JLabel lblPandesalImg = new JLabel("");
 		lblPandesalImg
-				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+				.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/pandesal.png")));
 		pandesalNorth.add(lblPandesalImg);
 
 		JPanel pandesalCenter = new JPanel();
@@ -460,7 +460,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		chocolateChipCookiePanel.add(chocolateChipCookieNorth, BorderLayout.NORTH);
 		
 		JLabel lblChocolateChipCookieImg = new JLabel("");
-		lblChocolateChipCookieImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblChocolateChipCookieImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/chocolate chip cookie.png")));
 		chocolateChipCookieNorth.add(lblChocolateChipCookieImg);
 		
 		JPanel chocolateChipCookieCenter = new JPanel();
@@ -487,7 +487,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		oatmealCookiePanel.add(oatmealCookieNorth, BorderLayout.NORTH);
 		
 		JLabel lblOatmealCookieImg = new JLabel("");
-		lblOatmealCookieImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblOatmealCookieImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/oatmeal cookie.png")));
 		oatmealCookieNorth.add(lblOatmealCookieImg);
 		
 		JPanel oatmealCookieCenter = new JPanel();
@@ -514,7 +514,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		crinklesPanel.add(crinklesNorth, BorderLayout.NORTH);
 		
 		JLabel lblCrinklesImg = new JLabel("");
-		lblCrinklesImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblCrinklesImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/crinkles.png")));
 		crinklesNorth.add(lblCrinklesImg);
 		
 		JPanel crinklesCenter = new JPanel();
@@ -544,7 +544,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		birthdayCandlesSetPanel.add(birthdayCandleNorth, BorderLayout.NORTH);
 		
 		JLabel lblBirthdayCandleImg = new JLabel("");
-		lblBirthdayCandleImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblBirthdayCandleImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/bday candle set.png")));
 		birthdayCandleNorth.add(lblBirthdayCandleImg);
 		
 		JPanel birthdayCandleCenter = new JPanel();
@@ -571,7 +571,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		cakeTopperPanel.add(cakeTopperNorth, BorderLayout.NORTH);
 		
 		JLabel lblCakeTopperImg = new JLabel("");
-		lblCakeTopperImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblCakeTopperImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/cake topper.png")));
 		cakeTopperNorth.add(lblCakeTopperImg);
 		
 		JPanel cakeTopperCenter = new JPanel();
@@ -598,7 +598,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		greetingsCardPanel.add(greetingsCardNorth, BorderLayout.NORTH);
 		
 		JLabel lblGreetingsCardImg = new JLabel("");
-		lblGreetingsCardImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/croissant.png")));
+		lblGreetingsCardImg.setIcon(new ImageIcon(BakeshopOrderFormFinal.class.getResource("/labExam/greeting card.png")));
 		greetingsCardNorth.add(lblGreetingsCardImg);
 		
 		JPanel greetingsCardCenter = new JPanel();
