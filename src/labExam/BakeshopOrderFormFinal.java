@@ -308,7 +308,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 
 		JPanel centerPanel = new JPanel();
 		centerPanel.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		centerPanel.setBackground(new Color(240, 255, 240));
+		centerPanel.setBackground(new Color(255, 127, 80));
 		contentPane.add(centerPanel, BorderLayout.CENTER);
 		centerPanel.setLayout(new BorderLayout(0, 0));
 
@@ -419,6 +419,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 		browniesPanel.add(browniesCenter, BorderLayout.CENTER);
 
 		chckbxBrownies = new JCheckBox("Brownies - ₱60");
+		chckbxBrownies.setBackground(new Color(255, 153, 102));
 		browniesCenter.add(chckbxBrownies);
 
 		JPanel browniesSouth = new JPanel();
@@ -918,9 +919,6 @@ public class BakeshopOrderFormFinal extends JFrame {
 		rdbtnPerDozen_1_1.setBackground(new Color(255, 250, 205));
 		paymentMethodOptionsPanel.add(rdbtnPerDozen_1_1);
 		
-		JPanel panel = new JPanel();
-		eastPanel.add(panel, BorderLayout.WEST);
-		
 
 		btnSubmitOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -961,13 +959,13 @@ public class BakeshopOrderFormFinal extends JFrame {
 		receiptArea.setText("");
 
 		// HEADER
-		receiptArea.append("========== Losamia Pastry ==========\n\n");
+		receiptArea.append("=============== Losamia Pastry ===============\n\n");
 		receiptArea.append(String.format("Customer: %s\n", txtName.getText()));
 		receiptArea.append(String.format("Phone: %s\n", txtPhone.getText()));
 		receiptArea.append(String.format("Order Type: %s\n\n", deliveryType));
 
 		receiptArea.append(String.format("%-20s %-5s %-15s %-10s\n", "Item", "Qty", "Unit", "Total"));
-		receiptArea.append("-----------------------------------------------------\n");
+		receiptArea.append("--------------------------------------------------------------------------------------\n");
 
 		// ================= ITEMS =================
 
@@ -1145,7 +1143,7 @@ public class BakeshopOrderFormFinal extends JFrame {
 			return;
 		}
 
-		receiptArea.append("-----------------------------------------------------\n");
+		receiptArea.append("--------------------------------------------------------------------------------------\n");
 
 		// ================= COMPUTATION =================
 		double vat = subtotal * 0.12;
