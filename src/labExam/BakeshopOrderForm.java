@@ -1177,8 +1177,6 @@ public class BakeshopOrderForm extends JFrame {
 	}
 
 	private boolean validateInputs(JCheckBox... checkboxes) {
-
-
 		if (txtName.getText().trim().isEmpty()) {
 			JOptionPane.showMessageDialog(this, "Customer name is required!");
 			return false;
